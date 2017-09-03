@@ -41,16 +41,16 @@ if (count($chkcode2) != 0) {
 if (count($chkcode) != 0) {
     $update_code = mysqli_query($conn, "update code_activity set checkcode='1',std_code='" . $_SESSION['std_code'] . "' where gencode='$gencode'");
     $update_his = mysqli_query($conn, "update history_act set code_id='" . $chkcode['code_id'] . "',status_regis=2 where std_code='" . $_SESSION['std_code'] . "' and act_id=$act_id");
-
+   
     if (!$update_his) {
         echo "Update not complate ERROR : " . mysqli_error($conn) . "";
     } else {
         switch ($_SESSION['Status_user']) {
             case 1:
-                header("location:admin.php");
+                header("location:act_card.php");
                 break;
             case 3:
-                header("location:student.php");
+                header("location:act_card.php");
                 break;
             default:
                 break;
