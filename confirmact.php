@@ -4,8 +4,9 @@ session_start();
 include_once 'header.php';
 //include_once 'config/config.php';
 include_once 'funtion/function_date.php';
-echo $act_id = $_POST['act_id'];
-echo $gencode = $_POST['gencode'];
+$act_id = $_POST['act_id'];
+$gencode = trim($_POST['gencode']);
+$_SESSION['std_code']; 
 
 $sql = mysqli_query($conn, "select code_id,gencode,gen_date from code_activity where gencode='$gencode'");
 $chkcode = mysqli_fetch_array($sql);
@@ -41,21 +42,23 @@ if (count($chkcode2) != 0) {
 if (count($chkcode) != 0) {
     $update_code = mysqli_query($conn, "update code_activity set checkcode='1',std_code='" . $_SESSION['std_code'] . "' where gencode='$gencode'");
     $update_his = mysqli_query($conn, "update history_act set code_id='" . $chkcode['code_id'] . "',status_regis=2 where std_code='" . $_SESSION['std_code'] . "' and act_id=$act_id");
-   
+    $sel_his = mysqli_query($conn, "select his_id from history_act where code_id='" . $chkcode['code_id'] . "' and status_regis=2");
+    $his_id = mysqli_fetch_assoc($sel_his);
+    $his_id['his_id'];
     if (!$update_his) {
         echo "Update not complate ERROR : " . mysqli_error($conn) . "";
     } else {
         switch ($_SESSION['Status_user']) {
             case 1:
-                header("location:act_card.php");
+                header("location:act_card.php?his_id=".$his_id['his_id']."");
                 break;
             case 3:
-                header("location:act_card.php");
+                header("location:act_card.php?his_id=".$his_id['his_id']."");
                 break;
             default:
                 break;
         }
     }
 } else {
-    echo 'โค้ดบ่ตรงเด้อ';
+    echo 'โค้ดกิจกรรมไม่ตรง';
 }
