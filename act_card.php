@@ -1,10 +1,13 @@
 <!DOCTYPE HTML>
 <?php include_once 'config/config.php'; ?>
-<html>
+<html lang="en">
 	<head>
 		<title>Activity System</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta name="description" content="">
+                <meta name="author" content="">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	</head>
 	<body>
             <?php
@@ -21,7 +24,9 @@ INNER JOIN teacher t ON t.teach_id=a.respon
 WHERE h.his_id=$hit_id"; 
              $result = mysqli_query($conn, $strsql);
              $rs = mysqli_fetch_array($result);
-            ?>
+             require_once ('mpdf60/mpdf.php');//ที่อยู่ของไฟล์ mpdf.phpในเครื่องเรา
+             ob_start();//ทำการเก็บค่า html
+             ?>
     <table border='1' width='450px'>
         <tr>
             <td>
@@ -56,6 +61,16 @@ WHERE h.his_id=$hit_id";
             </td>
         </tr>
     </table>
-
+<?php
+$html = ob_get_contents();
+ob_clean();
+$pdf = new mPDF('tha2','A4','10','');
+$pdf->autoScriptToLangto= TRUE;
+$pdf->autoLangToFont= TRUE;
+$pdf->SetDisplayMode('fullpage');
+$pdf->WriteHTML($html,2);
+$pdf->Output("MyPDF/Act_card.pdf");
+echo "<meta http-equiv='refesh' content='0;url=MyPDF/Act_card.pdf' />";
+?>
     </body>
     </html>
