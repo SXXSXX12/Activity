@@ -30,7 +30,7 @@ WHERE h.his_id=$hit_id";
     <table border='1' width='450px'>
         <tr>
             <td>
-                <table border='0' style="background-image: url('images/cf.jpg');" Cellpadding ='5' width='450px'>
+                <table border='0' style="background-image: url('images/logo.jpg');" Cellpadding ='5' width='450px'>
                   <tr>
                       <td style="text-align: center"><?php echo "รหัสกิจกรรม ". $rs ['gencode']?></td>
                   </tr>
@@ -70,7 +70,7 @@ $pdf->autoLangToFont= TRUE;
 $pdf->SetDisplayMode('fullpage');
 $pdf->WriteHTML($html,2);
 $pdf->Output("MyPDF/Act_card.pdf");
-echo "<meta http-equiv='refesh' content='0;url=MyPDF/Act_card.pdf' />";
+echo "<meta http-equiv='refresh' content='0;url=MyPDF/Act_card.pdf' />";
 ?>
     </body>
     </html>
