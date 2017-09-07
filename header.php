@@ -50,7 +50,8 @@ require_once("config/config.php");
                                                                     <li><a href="Activity_fo.php">เพิ่มข้อมูลกิจกรรม</a></li>
                                                                     <li><a href="update_new.php">เพิ่มข่าวประชาสัมพันธ์</a></li>
                                                                     <li><a href="report_act.php">รายงานการเข้ากิจกรรม</a></li>
-                                                                    <?php }?>      
+                                                                    <?php }?> 
+                                                                    
                                                                         <li><a href="logout.php" onclick="return confirm('คุณต้องการออกจากระบบหรือไม่');">ออกจากระบบ</a></li>
 								</ul>
 							</li>

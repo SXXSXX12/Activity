@@ -18,7 +18,7 @@
                     echo "วันที่สิ้นสุดการจัดกิจกรรม:" . DateThai2($rs['act_dateend']). "<br><br>"; 
                     echo "สถานที่จัดกิจกรรม:" .$rs ['act_location']."</h3>". "<br><br>"; 
                     ?>
-                <form name="form1" method="POST" action="confirmact.php">
+                <form name="form1" method="POST" action="confirmact.php" target="_blank">
                           โค้ดกิจกรรม  <input type="text" name="gencode" value=""  /><br/>    
                           <input type="hidden" name="act_id" value="<?=$act_id?>">     
                           <a href="confirmact.php"><input type="submit" onclick="return confirm('ยืนยันการเข้ากิจกรรมเรียบร้อยแล้วค่ะ')" value="ยืนยัน"/></a>

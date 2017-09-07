@@ -42,6 +42,7 @@
                         <td align='center'>ลำดับ</td>
                         <td align='center'>รหัสนักศึกษา</td>
                         <td align='center'>ชื่อ-สกุล</td>
+                        <td align='center'>รายละเอียดการเข้ากิจกรรม</td>
                     </tr>
                     <?php
                     
@@ -53,6 +54,7 @@
                             <td align='center'><?= $row_no ?></td>
                             <td align='center'><?php echo $rs['std_code']; ?></td>
                             <td align='center'><?php echo $rs['fullname']; ?></td>
+                            <td align='center'><a href='reportstd_act.php?std_code=<?= $rs['std_code'] ?>' class='button'>รายละเอียด</a></td>
                         </tr>
                     <?php } ?>
 

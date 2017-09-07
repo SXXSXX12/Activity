@@ -1,13 +1,12 @@
-<!DOCTYPE HTML>
 <?php include_once 'config/config.php'; ?>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Activity System</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta name="description" content="">
-                <meta name="author" content="">
-                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
 	</head>
 	<body>
             <?php
@@ -27,10 +26,10 @@ WHERE h.his_id=$hit_id";
              require_once ('mpdf60/mpdf.php');//ที่อยู่ของไฟล์ mpdf.phpในเครื่องเรา
              ob_start();//ทำการเก็บค่า html
              ?>
-    <table border='1' width='450px'>
+    <table border='1' width='350px'>
         <tr>
             <td>
-                <table border='0' style="background-image: url('images/logo.jpg');" Cellpadding ='5' width='450px'>
+                <table border='0' style="background-image: url('images/logo.jpg');" Cellpadding ='5' width='350px'>
                   <tr>
                       <td style="text-align: center"><?php echo "รหัสกิจกรรม ". $rs ['gencode']?></td>
                   </tr>
@@ -65,10 +64,10 @@ WHERE h.his_id=$hit_id";
 $html = ob_get_contents();
 ob_clean();
 $pdf = new mPDF('tha2','A4','10','');
-$pdf->autoScriptToLangto= TRUE;
-$pdf->autoLangToFont= TRUE;
+$pdf->autoScriptToLang = true;
+$pdf->autoLangToFont = true;
 $pdf->SetDisplayMode('fullpage');
-$pdf->WriteHTML($html,2);
+$pdf->WriteHTML($html, 2);
 $pdf->Output("MyPDF/Act_card.pdf");
 echo "<meta http-equiv='refresh' content='0;url=MyPDF/Act_card.pdf' />";
 ?>
