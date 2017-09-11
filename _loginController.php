@@ -1,17 +1,24 @@
 <?php     session_start();
     require_once("_config.php"); //เรียกใช้งานไฟล์ config.php 
 
-      $username = trim(mysql_real_escape_string($_POST["username"])); //trim(mysql_real_escape_string ป้องกันการ แฮกได้ระดับหนึ่ง
-      $password = trim(mysql_real_escape_string($_POST["password"]));
-      $statususer = trim(mysql_real_escape_string($_POST["statususer"]));
- 
-    $sql= "SELECT s.std_code,
-CONCAT((CASE s.pname
-WHEN 1 THEN 'นาย'
-WHEN 2 THEN 'นางสาว'
-ELSE 'ไม่มีสถานะ' END),s.fname,' ',s.lname) as fullname,u.Status_user 
+      echo $username = $_POST["username"]; //trim(mysql_real_escape_string ป้องกันการ แฮกได้ระดับหนึ่ง
+      echo $password = $_POST["password"];
+      echo $statususer = $_POST["statususer"];
+    
+if($statususer=='2'){//ตรวจสอบว่าเป็น อ.
+    $codesel = "t.teach_id,CONCAT(t.teach_name,' ',t.teach_lname) as fullname";
+    $codejoin = "INNER JOIN teacher t ON t.teach_id=u.std_code";
+}else{//ตรวจสอบว่าเป็น admnin หรือ นศ.
+    $codesel = "s.std_code,CONCAT((CASE s.pname
+    WHEN 1 THEN 'นาย'
+    WHEN 2 THEN 'นางสาว'
+    ELSE 'ไม่มีสถานะ' END),s.fname,' ',s.lname) as fullname";
+    $codejoin = "INNER JOIN student s ON s.std_code=u.std_code";
+}
+
+    $sql= "SELECT $codesel ,u.Status_user 
 FROM `user` u
-INNER JOIN student s ON s.std_code=u.std_code
+$codejoin
 WHERE u.username='".$username."' AND u.`password`='".$password."' AND u.Status_user='".$statususer."'"; //คำสั่งของ sql สำหรับ แสดงข้อมูล
     $result = $conn->query($sql);//สั่งให้ตัวแปร sql ทำงาน 
     

@@ -37,8 +37,8 @@ WHERE a.year1='$year' OR a.year2='$year' OR a.year3='$year' OR a.year4='$year'";
                         $percen = "0";
                         $join = "0";
                     }
-
-                    echo " เข้าร่วมกิจกรรม " . $join . " คิดเป็น " . $percen . " %";
+                    echo " <br>กิจกรรมที่ต้องเข้าร่วมทั้งหมด " . $rs1['total'] . "กิจกรรม  " ;
+                    echo " <br>เข้าร่วมกิจกรรม " . $join . "กิจกรรม คิดเป็น " . $percen . " %";
                     ?>
             </div><p>
             <div class="alert alert-success col-lg-12">
@@ -49,7 +49,7 @@ WHERE a.year1='$year' OR a.year2='$year' OR a.year3='$year' OR a.year4='$year'";
                         <td align='center'>วันเริ่มกิจกรรม</td>
                         <td align='center'>วันที่สิ้นสุดกิจกรรม</td>
                         <td align='center'>จำนวนชั่วโมง</td>
-                         <td align='center'>พิมพ์บัตรกิจกรรม</td>
+                        <td align='center'>พิมพ์บัตรกิจกรรม</td>
                     </tr>
                     <?php
                     $row_no = 0;
@@ -62,7 +62,7 @@ WHERE a.year1='$year' OR a.year2='$year' OR a.year3='$year' OR a.year4='$year'";
                             <td align='center'><?php echo $rs['act_datestart']; ?></td>
                             <td align='center'><?php echo $rs['act_dateend']; ?></td>
                             <td align='center'><?php echo $rs['act_hour']; ?></td>
-                            
+
                             <td align='center'><a href='act_card.php?his_id=<?= $rs['his_id'] ?>' class='button'>พิมพ์บัตรกิจกรรม</a></td>
                         </tr>
                     <?php } ?>

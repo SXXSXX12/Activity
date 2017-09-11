@@ -50,10 +50,10 @@ if (count($chkcode) != 0) {
     } else {
         switch ($_SESSION['Status_user']) {
             case 1:
-                header("location:act_card.php?his_id=".$his_id['his_id']."");
+                header("location:admin.php?his_id=".$his_id['his_id']."");
                 break;
             case 3:
-                header("location:act_card.php?his_id=".$his_id['his_id']."");
+                header("location:student.php?his_id=".$his_id['his_id']."");
                 break;
             default:
                 break;

@@ -53,24 +53,27 @@ $row = $result->fetch_object();
        WHERE h.std_code='" . $_SESSION['std_code'] . "' AND h.status_regis=1";
                         $result = mysqli_query($conn, $strsql);
                         while ($rs = mysqli_fetch_array($result)) {
-                            ?>
-                            <h3><?= $rs['act_name'] ?></h3> <a href="q_std.php?act_id=<?= $rs['act_id'] ?>"class="button">Confirm</a><br />
-
-<?php } ?>
-                    </header>
-                    <form action="Insertion4.php" method="post">
-                        <div id="loginbox">
-                        </div>
-                    </form>
+                            $checkDate = $rs['act_datestart'];
+                            $check = date('Y-m-d', strtotime("$checkDate+14 days "));
+                            if (date('Y-m-d') < $check) {
+                                ?>
+                                <h3><?= $rs['act_name'] ?></h3> <a href="q_std.php?act_id=<?= $rs['act_id'] ?>&std_code=<?= $_SESSION['std_code'] ?>"class="button">Confirm</a><br />
+                           <?php }
+                        } ?>
+                        </header>
+                        <form action="Insertion4.php" method="post">
+                            <div id="loginbox">
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
+
+    </div>
     </div>
 
-</div>
-</div>
 
 
-
-<!-- Footer -->
-<?php include_once 'footer.php'; ?>
+    <!-- Footer -->
+    <?php include_once 'footer.php'; ?>

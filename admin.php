@@ -42,7 +42,7 @@ $row = $result->fetch_object();
                         สถานะ : <?= $row->Status_user ?>  <br />
                         อีเมล์ : <?= $row->email ?>  <br />
                         เบอร์โทร : <?= $row->phone ?>  <br /><br>
-                        <a href='editstd.php'><input type="submit" value=" Edit " /></a>
+                        <a href="editstd.php?std_code=<?= $_SESSION['std_code'] ?>"><input type="submit" value=" Edit " /></a>
                     </div>
                 </div>
 
@@ -54,13 +54,13 @@ $row = $result->fetch_object();
                         $strsql = "SELECT * FROM activity a
 INNER JOIN history_act h ON h.act_id=a.act_id
 WHERE h.std_code='" . $_SESSION['std_code'] . "' AND h.status_regis=1";
-                        $year = substr($_SESSION['std_code'], 0, 2);
+                        
                         $result = mysqli_query($conn, $strsql);
                         while ($rs = mysqli_fetch_array($result)) {
                             $checkDate = $rs['act_datestart'];
                             $check = date('Y-m-d', strtotime("$checkDate+14 days "));
                             if (date('Y-m-d') < $check) { ?>
-                                <h3><?= $rs['act_name'] ?></h3> <a href="q_std.php?act_id=<?= $rs['act_id'] ?>"class="button">Confirm</a><br />
+                                <h3><?= $rs['act_name'] ?></h3> <a href="q_std.php?act_id=<?= $rs['act_id'] ?>&std_code=<?= $_SESSION['std_code'] ?>"class="button">Confirm</a><br />
                             <?php }
                         } ?>
                     </header>

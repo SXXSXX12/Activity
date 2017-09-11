@@ -45,9 +45,9 @@ ORDER BY act_id DESC";
                                     ?>
                                     <tr>
                                         <td align='center'><?= $row_no ?></td>
-                                        <td align='center'><?php echo $rs['act_name']; ?></td>
-                                        <td align='center'><?php echo $rs['start_time']; ?></td>
-                                        <td align='center'><?php echo $rs['act_location']; ?></td>
+                                        <td align='center'><?= $rs['act_name']; ?></td>
+                                        <td align='center'><?= $rs['start_time']; ?></td>
+                                        <td align='center'><?= $rs['act_location']; ?></td>
                                         <td align='center'><?= DateThai1($rs['act_datestart']) ?></td>
                                         <td align='center'><?= DateThai1($rs['act_dateend']) ?></td>
                                         <?php if (empty($rs['check_act'])) { ?>
