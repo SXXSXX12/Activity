@@ -48,8 +48,6 @@
 }
 ?>
                             </table>
-
-
                             </section>
                         </div>
                 </div>
