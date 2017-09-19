@@ -24,6 +24,7 @@
                                     <td align='center'>รหัสนักศึกษา</td>
                                     <td align='center'>ชื่อ-สกุล</td>
                                     <td align='center'>เพิ่มประวัติการศึกษา</td>
+                                    <td align='center'>เพิ่มผลงาน</td>
                                 </tr>
                                 <?php
                                 //$std_code = $_GET['std_code'];
@@ -38,6 +39,7 @@
                                         <td align='center'><?php echo $rs['std_code']; ?></td>
                                         <td align='center'><a href="educationtable.php?std_code=<?= $rs['std_code']?>"><?php echo $rs ['fname'] . $rs ['lname']; ?></a></td>
                                         <td align='center'><a href='buildresumeadmin.php?std_code=<?= $rs['std_code']?>' class='#'><img src="images/save.ico" width="40" height="45"></a></td>
+                                        <td align='center'><a href='addfolio.php?std_code=<?= $rs['std_code']?>' class='#'><img src="images/save.ico" width="40" height="45"></a></td>
                                     </tr>
                                 <?php } ?>
                                    

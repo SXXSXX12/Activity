@@ -16,7 +16,7 @@
 					<div class="row">
 					<div class="12u">
 						
-							<form action="addstd.php" method="post">
+							<form action="addstd.php" method="post" enctype="multipart/form-data">
                                                         <div class="alert alert-info">
 							<div id="loginbox">
                                                             <h4>คำนำหน้า
@@ -47,6 +47,7 @@
 							<h4>วัน-เดือน-ปี-เกิด <input readonly  type="text" name="dateofbirth" class='datepicker' data-date-format="yyyy/mm/dd"value="<?= isset($_GET['method'])?$rs['dateofbirth']:''?>"></h4>
 							<h4>เบอร์โทร <input type="text" name="phone"value=" <?= isset($_GET['method'])?$rs['phone']:''?>"/></h4>	
                                                         <h4>E-mail <input type="text" name="email" value=" <?= isset($_GET['method'])?$rs['email']:''?>"/></h4>
+                                                       <h4> รูปภาพสำหรับ ประวัตินักศึกษา  <input type="file" name="image"  id="image"><br /></h4>
 							<?php
                                     if(isset($_GET['method'])?$_GET['method']:''=='edit'){
                                         echo "<input type='hidden' name='method' value='edit'>";
