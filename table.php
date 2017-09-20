@@ -1,8 +1,16 @@
 <?php include_once 'header.php'; ?>
+<br>                                     
+                                        <center><ul class="actions">
+						<li><a href="admin.php" class="button">Cnofirm Activity</a></li>
+						<li><a href="educate.php" class="button">Build Resume</a></li>
+						<li><a href="" class="button">Lecturer Data</a></li>
+						<li><a href="data_student.php" class="button">Student Data</a></li>
+                                                 <li><a href="table.php" class="button special">Activity Data</a></li>
+					</ul></center>
 <!-- Main -->
 <section id="main" class="container">
     <header>
-        <h2>ตารางกิจกรรม</h2>
+        <h2>ข้อมูลกิจกรรม</h2>
     </header>
     <div class="row">
         <div class="12u">

@@ -3,9 +3,9 @@
 				<center><ul class="actions">
 						<li><a href="admin.php" class="button">Cnofirm Activity</a></li>
 						<li><a href="educate.php" class="button ">Build Resume</a></li>
-						<li><a href="Activity_fo.php" class="button">Activity Data</a></li>
 						<li><a href="" class="button special">Lecturer Data</a></li>
 						<li><a href="data_student.php" class="button ">Student Data</a></li>
+                                                 <li><a href="table.php" class="button">Activity Data</a></li>
 					</ul></center>
 
 			<!-- Main -->

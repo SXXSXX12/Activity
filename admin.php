@@ -21,10 +21,9 @@ $row = $result->fetch_object();
 <center><ul class="actions">
         <li><a href="admin.php" class="button special">Confirm Activity</a></li>
         <li><a href="educate.php" class="button">Build Resume</a></li>
-        <li><a href="Activity_fo.php" class="button">Activity Data</a></li>
         <li><a href="data_aj.php" class="button">Lecturer Data</a></li>
         <li><a href="data_student.php" class="button">Student Data</a></li>
-        <li><a href="table.php" class="button">Activity Table</a></li>
+        <li><a href="table.php" class="button">Activity Data</a></li>
     </ul></center><br>
 <!-- Main -->
 
@@ -53,7 +52,7 @@ $row = $result->fetch_object();
                         <?php
                         $strsql = "SELECT * FROM activity a
 INNER JOIN history_act h ON h.act_id=a.act_id
-WHERE h.std_code='" . $_SESSION['std_code'] . "' AND h.status_regis=1";
+WHERE h.std_code='" . $_SESSION['std_code'] . "' AND h.status_regis=0";
                         
                         $result = mysqli_query($conn, $strsql);
                         while ($rs = mysqli_fetch_array($result)) {
