@@ -63,7 +63,7 @@ WHERE a.year1='$year' OR a.year2='$year' OR a.year3='$year' OR a.year4='$year'";
                             <td align='center'><?php echo $rs['act_dateend']; ?></td>
                             <td align='center'><?php echo $rs['act_hour']; ?></td>
 
-                            <td align='center'><a href='act_card.php?his_id=<?= $rs['his_id'] ?>' class='button'>พิมพ์บัตรกิจกรรม</a></td>
+                            <td align='center'><a href='act_card.php?his_id=<?= $rs['his_id'] ?>' class='#'><img src="images/printer.ico" width="35" height="35"></a></td>
                         </tr>
                     <?php } ?>
 
