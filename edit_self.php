@@ -24,7 +24,7 @@ WHERE s.std_code = $std_code AND u.Status_user =$status_user";
                                                         <div class="alert alert-info">
 							<div id="loginbox">
                                                             <h4>คำนำหน้า
-                                                                <select name="pname">
+                                                                <select name="pname" required>
                                                                     <option value="">เลือกคำนำหน้าชื่อ</option>
                                                                     <?php if(isset($_GET['method'])){
                                                                         if($rs['pname']=='1'){?>

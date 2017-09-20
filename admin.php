@@ -42,7 +42,7 @@ $row = $result->fetch_object();
                         สถานะ : <?= $row->Status_user ?>  <br />
                         อีเมล์ : <?= $row->email ?>  <br />
                         เบอร์โทร : <?= $row->phone ?>  <br /><br>
-                        <a href="editstd.php?std_code=<?= $_SESSION['std_code'] ?>"><input type="submit" value=" Edit " /></a>
+                        <a href='edit_self.php?std_code=<?= $_SESSION['std_code'] ?>&Status_user=<?= $_SESSION['Status_user'] ?>&method=edit' class='button'>Edit</a>
                     </div>
                 </div>
 
