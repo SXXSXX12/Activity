@@ -9,9 +9,9 @@
                 <font size="5" color="green">PortFolio </font><br><br>
                    </header>
                     <div id="loginbox">
-                        ชื่อผลงาน <input type="text" name="projectname" ><br />             			
-                        รายละเอียดผลงาน <textarea name="portfolio" id="portyear" placeholder="รายละเอียด" rows="6"></textarea>
-                        ปีที่ทำผลงาน <input type="text" name="portyear" ><br />
+                        ชื่อผลงาน <input type="text" name="projectname" required><br />             			
+                        รายละเอียดผลงาน <textarea name="portfolio" id="portyear" placeholder="รายละเอียด" rows="6" required></textarea>
+                        ปีที่ทำผลงาน <input type="text" name="portyear" required><br />
                          <input type="hidden" name="std_code" value="<?=$_GET['std_code']?>">
                             <input type="submit" value=" submit ">
                     </div>

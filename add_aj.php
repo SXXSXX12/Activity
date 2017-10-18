@@ -19,10 +19,10 @@
 							<form action="addaj.php" method="post">
                                                         <div class="alert alert-info">
 							<div id="loginbox">
-							<h4>ชื่อ<input type="text" name="fname" value="<?= isset($_GET['method'])?$rs['teach_name']:''?>"/></h4>
-							<h4>สกุล<input type="text" name="lname"value=" <?= isset($_GET['method'])?$rs['teach_lname']:''?>"/></h4>
-							<h4>เบอร์โทร <input type="text" name="phone"value=" <?= isset($_GET['method'])?$rs['phone']:''?>"/></h4>	
-                                                        <h4>E-mail <input type="text" name="email" value=" <?= isset($_GET['method'])?$rs['email']:''?>"/></h4>
+							<h4>ชื่อ<input type="text" name="fname" value="<?= isset($_GET['method'])?$rs['teach_name']:''?>" required/></h4>
+							<h4>สกุล<input type="text" name="lname"value=" <?= isset($_GET['method'])?$rs['teach_lname']:''?>" required/></h4>
+							<h4>เบอร์โทร <input type="text" name="phone"value=" <?= isset($_GET['method'])?$rs['phone']:''?>" required/></h4>	
+                                                        <h4>E-mail <input type="text" name="email" value=" <?= isset($_GET['method'])?$rs['email']:''?>" required/></h4>
 							<?php
                                     if(isset($_GET['method'])?$_GET['method']:''=='edit'){
                                         echo "<input type='hidden' name='method' value='edit'>";

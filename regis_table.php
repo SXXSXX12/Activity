@@ -2,7 +2,7 @@
 <!-- Main -->
 <section id="main" class="container">
     <header>
-        <h2>ตารางกิจกรรม</h2>
+        <h2>ลงทะเบียนกิจกรรม</h2>
     </header>
     <div class="row">
         <div class="12u">

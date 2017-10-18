@@ -27,16 +27,16 @@ if(isset($_GET['method'])){
                         <div class="row uniform 50%">
                             <div class="12u )">
                                 <h3>ชื่อกิจกรรม</h3>
-                                <input type="text" name="act_name" required value="<?=isset($_GET['method'])?$rs['act_name']:''?>"/>
+                                <input type="text" name="act_name" required value="<?=isset($_GET['method'])?$rs['act_name']:''?>" required/>
                             </div>
                             <div class="12u">
                                 <h3>วันที่จัดกิจกรรม</h3>
-                                <div class="col-md-6" style="padding:0;padding-right: 10px;">
+                                <div class="col-md-6" style="padding:0;padding-right: 10px;" required>
 
-                                    วันเริ่มกิจกรรม <input readonly  type="text" id="dateStart" name="dateStart" class='datepicker' data-date-format="yyyy/mm/dd" required value="<?= isset($_GET['method'])?$rs['act_datestart']:''?>">
+                                    วันเริ่มกิจกรรม <input readonly  type="text" id="dateStart" name="dateStart" class='datepicker' data-date-format="yyyy/mm/dd" required value="<?= isset($_GET['method'])?$rs['act_datestart']:''?>" required>
                                 </div>
                                 <div class="col-md-6" style="padding:0;padding-left: 10px;">
-                                    วันสิ้นสุดกิจกรรม   <input readonly  type="text" id="dateStart" name="dateEnd" class='datepicker' data-date-format="yyyy/mm/dd" required value="<?= isset($_GET['method'])?$rs['act_dateend']:''?>"> 
+                                    วันสิ้นสุดกิจกรรม   <input readonly  type="text" id="dateStart" name="dateEnd" class='datepicker' data-date-format="yyyy/mm/dd" required value="<?= isset($_GET['method'])?$rs['act_dateend']:''?>" required> 
                                 </div>
 
                                 <script>
@@ -53,18 +53,18 @@ if(isset($_GET['method'])){
                         <div class="row uniform 50%">
                             <div class="12u ">
                                 <h3>จำนวนชั่วโมงกิจกรรม</h3>
-                                <input type="text" name="hour" required value="<?= isset($_GET['method'])?$rs['act_hour']:''?>"/>
+                                <input type="text" name="hour" required value="<?= isset($_GET['method'])?$rs['act_hour']:''?>" required/>
                             </div>
                         </div>
                         <div class="row uniform 50%">
                             <div class="12u">
                                 <h3>จำนวนนักศึกษาที่เข้าร่วม/คน</h3>
-                                <input type="text"  name="group" required value="<?= isset($_GET['method'])?$rs['act_number']:''?>"/>	
+                                <input type="text"  name="group" required value="<?= isset($_GET['method'])?$rs['act_number']:''?>" required/>	
                             </div>
                             <div class="row uniform 50%">
                                 <h3>เวลาที่จัดกิจกรรม</h3>
                                 <div class="6u ">
-                                    <select name ="take_hour" id="take_hour" value="<?= isset($_GET['method'])?$rs['start_time']:''?>">
+                                    <select name ="take_hour" id="take_hour" value="<?= isset($_GET['method'])?$rs['start_time']:''?>" required>
                                         <option value="">ชั่วโมง</option>
                                         <?php
                                         for ($i = 0; $i <= 23; $i++) {
@@ -97,7 +97,7 @@ if(isset($_GET['method'])){
                             <div class="row uniform 50%">
                                 <div class="12u ">
                                     <h3>สถานที่จัดกิจกรรม</h3>
-                                    <input type="text" name="location" required value="<?= isset($_GET['method'])?$rs['act_location']:''?>"/>
+                                    <input type="text" name="location" required value="<?= isset($_GET['method'])?$rs['act_location']:''?>" required/>
                                 </div>
                                 <div class="row uniform 50%"><br>
                                     <div class="12u">
@@ -120,7 +120,7 @@ if(isset($_GET['method'])){
 
                                     <div class="12u">
                                         <h3>อาจารย์ผู้รับผิดชอบ</h3>
-                                        <select name='teacher'>
+                                        <select name='teacher' required>
                                             <option value=''>เลือกอาจารย์ที่รับผิดชอบ</option>
                                             <?php
                                            $sql = mysqli_query($conn, "SELECT teach_id,CONCAT(teach_name,' ',teach_lname) as fullname FROM teacher ORDER BY fullname ASC");

@@ -46,7 +46,7 @@ WHERE s.std_code='$std_code' $code3";
                     ?>
                     <form name="form1" method="POST" action="addresume.php">
                         วุฒิการศึกษา<br>
-                        <select name='educate'>
+                        <select name='educate' required>
                             <option value=''>วุฒิการศึกษา</option>
                             <?php
                             $sql = mysqli_query($conn, "SELECT * FROM educate ");
@@ -60,11 +60,11 @@ WHERE s.std_code='$std_code' $code3";
                             }
                             ?>
                         </select><br/>
-                        สาขา <input type="text" name="major" value="<?= isset($_GET['method']) ? $rs['major'] : '' ?>"  />       <br/>
-                        สถาบันที่จบการศึกษา <input type="text" name="intiute" value="<?= isset($_GET['method']) ? $rs['intiute'] : '' ?>"/> <br />
+                        สาขา <input type="text" name="major" value="<?= isset($_GET['method']) ? $rs['major'] : '' ?>" required /><br/>
+                        สถาบันที่จบการศึกษา <input type="text" name="intiute" value="<?= isset($_GET['method']) ? $rs['intiute'] : '' ?>" required/><br />
                         ปีที่จบ (พ.ศ.)<br/>
                         <div class="6u ">
-                            <select name ="endyear" id="endyearr" value="<?= isset($_GET['method']) ? $rs['endyear'] : '' ?>">
+                            <select name ="endyear" id="endyearr" value="<?= isset($_GET['method']) ? $rs['endyear'] : '' ?>" required>
                                 <option value="">ปีที่จบ</option>
                                 <?php
                                 for ($i = 2530; $i <= 2560; $i++) {

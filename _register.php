@@ -22,11 +22,11 @@
 							<form action="adduser.php" method="post">
                                                         <div class="alert alert-info">
 							<div id="loginbox">
-								รหัสประจำตัว <input type="text" name="stu_id" /><br />
-								E-mail <input type="email" name="email" /><br />             			
-								Password <input type="password" name="password1"  /><br />
-								Confirm-Password <input type="password" name="password2"  /><br />
-								<input type="submit" value=" Register "></a>
+								รหัสประจำตัว <input type="text" name="stu_id" required/><br />
+								E-mail <input type="email" name="email" required/><br />             			
+								Password <input type="password" name="password1" required/><br />
+								Confirm-Password <input type="password" name="password2" required/><br />
+								<input type="submit" value="Register" required></a>
 							</div>
                                                         </div>
 							<input type="hidden" name="method" value="std">
