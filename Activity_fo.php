@@ -47,7 +47,6 @@ if(isset($_GET['method'])){
 
 
                                 </script>							   
-
                             </div>
                         </div>
                         <div class="row uniform 50%">
