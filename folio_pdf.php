@@ -17,7 +17,7 @@
     WHEN 2 THEN 'นางสาว'
 ELSE 'ไม่มีสถานะ' END),fname,' ',lname) as fullname ,dateofbirth,address,phone,email,image
 FROM student 
-WHERE std_code ='5740248105'"; 
+WHERE std_code ='5740248123'"; 
              $result = mysqli_query($conn, $strsql);
              $rs = mysqli_fetch_array($result);
              

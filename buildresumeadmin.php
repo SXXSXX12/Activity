@@ -1,17 +1,9 @@
 <?php include_once 'header.php'; ?>
 <br>
-<center><ul class="actions">
-        <li><a href="admin.php" class="button">Confirm Activity</a></li>
-        <li><a href="buildresumeadmin.php" class="button special">Build Resume</a></li>
-        <li><a href="Activity_fo.php" class="button">Activity Data</a></li>
-        <li><a href="data_aj.php" class="button">Lecturer Data</a></li>
-        <li><a href="data_student.php" class="button">Student Data</a></li>
-    </ul></center>
-
 <!-- Main -->
 <section id="main" class="container 75%">
     <header>
-        <h3>สร้างประวัติส่วนตัว</h3>
+        <h2>สร้างประวัติส่วนตัว</h2>
     </header>
     <div class="row">
         <div class="12u">
@@ -30,9 +22,9 @@
                         $code3 = "";
                     }
                     $strsql = "SELECT s.*$code1
-FROM student s 
-$code2
-WHERE s.std_code='$std_code' $code3";
+                    FROM student s 
+                    $code2
+                    WHERE s.std_code='$std_code' $code3";
                     $result = mysqli_query($conn, $strsql);
                     $rs = mysqli_fetch_array($result);
 
@@ -98,7 +90,6 @@ if (isset($_GET['method']) ? $_GET['method'] : '' == 'edit') {
                     </form>
                 </div>
             </div>
-
         </div>
     </div>
 </section>

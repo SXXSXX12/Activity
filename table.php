@@ -1,12 +1,12 @@
 <?php include_once 'header.php'; ?>
 <br>                                     
-                                        <center><ul class="actions">
-						<li><a href="admin.php" class="button">Cnofirm Activity</a></li>
-						<li><a href="educate.php" class="button">Build Resume</a></li>
-						<li><a href="" class="button">Lecturer Data</a></li>
-						<li><a href="data_student.php" class="button">Student Data</a></li>
-                                                 <li><a href="table.php" class="button special">Activity Data</a></li>
-					</ul></center>
+<center><ul class="actions">
+        <li><a href="admin.php" class="button" title="คอนเฟิร์มกิจกรรม">Cnofirm Activity</a></li>
+        <li><a href="educate.php" class="button" title="สร้างประวัติส่วนตัว">Build Resume</a></li>
+        <li><a href="" class="button" title="ข้อมูลอาจารย์">Lecturer Data</a></li>
+        <li><a href="data_student.php" class="button" title="ข้อมูลนักศึกษา">Student Data</a></li>
+        <li><a href="table.php" class="button special" title="ข้อมูลกิจกรรม">Activity Data</a></li>
+    </ul></center>
 <!-- Main -->
 <section id="main" class="container">
     <header>
@@ -15,7 +15,6 @@
     <div class="row">
         <div class="12u">
             <!-- Table -->
-            <section class="box">
                 <div class="table-wrapper">
                     <table>
                         <thead>
@@ -61,18 +60,16 @@ ORDER BY act_id DESC";
                                         <?php if (empty($rs['check_act'])) { ?>
                                             <td align='center'><a href='randomcode.php?act_id=<?= $rs['act_id'] ?>' class='#'><img src="images/das.png" width="35" height="35"></a></td>
                                         <?php } else { ?>
-                                            <td align='center'><a href='code.php?act_id=<?= $rs['act_id'] ?>' class='#'><img src="images/printer.ico" width="35" height="35"></a></td>
+                                            <td align='center'><a href='code.php?act_id=<?= $rs['act_id'] ?>' title="พิมพ์โค้ดกิจกรรม"><img src="images/printer.ico" width="35" height="35"></a></td>
                                         <?php } ?>
-                                        <td align='center'><a href='Activity_fo.php' class='#'><img src="images/save.ico" width="40" height="45"></a></td>
-                                        <td align='center'><a href='Activity_fo.php?act_id=<?= $rs['act_id'] ?>&method=edit' class='#'><img src="images/din.png" width="35" height="35"></a></td>
-                                        <td align='center'><a href='table.php?act_id=<?= $rs['act_id']; ?>&method=delete' onclick="return confirm('คุณต้องการลบ?')" class='#'><img src="images/2.png" width="35" height="35"></a></td>
+                                        <td align='center'><a href='Activity_fo.php' title="เพิ่มกิจกรรม"><img src="images/save.ico" width="40" height="45"></a></td>
+                                        <td align='center'><a href='Activity_fo.php?act_id=<?= $rs['act_id'] ?>&method=edit' title="แก้ไขกิจกรรม"><img src="images/din.png" width="35" height="35"></a></td>
+                                        <td align='center'><a href='table.php?act_id=<?= $rs['act_id']; ?>&method=delete' onclick="return confirm('คุณต้องการลบ?')" title="ลบกิจกรรม"><img src="images/2.png" width="35" height="35"></a></td>
                                     </tr>		
                                 <?php } ?>
                             </table>
-
-
-                            </section>
-                        </div>
+                         </section>
+                     </div>
                 </div>
             </section>
         </div>

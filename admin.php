@@ -19,11 +19,11 @@ $row = $result->fetch_object();
 ?>
 <br>
 <center><ul class="actions">
-        <li><a href="admin.php" class="button special">Confirm Activity</a></li>
-        <li><a href="educate.php" class="button">Build Resume</a></li>
-        <li><a href="data_aj.php" class="button">Lecturer Data</a></li>
-        <li><a href="data_student.php" class="button">Student Data</a></li>
-        <li><a href="table.php" class="button">Activity Data</a></li>
+        <li><a href="admin.php" class="button special" title="คอนเฟิร์มกิจกรรม">Confirm Activity</a></li>
+        <li><a href="educate.php" class="button" title="สร้างประวัติส่วนตัว">Build Resume</a></li>
+        <li><a href="data_aj.php" class="button" title="ข้อมูลอาจารย์">Lecturer Data</a></li>
+        <li><a href="data_student.php" class="button" title="ข้อมูลนักศึกษา">Student Data</a></li>
+        <li><a href="table.php" class="button" title="ข้อมูลกิจกรรม">Activity Data</a></li>
     </ul></center><br>
 <!-- Main -->
 
@@ -41,7 +41,7 @@ $row = $result->fetch_object();
                         สถานะ : <?= $row->Status_user ?>  <br />
                         อีเมล์ : <?= $row->email ?>  <br />
                         เบอร์โทร : <?= $row->phone ?>  <br /><br>
-                        <a href='edit_self.php?std_code=<?= $_SESSION['std_code'] ?>&Status_user=<?= $_SESSION['Status_user'] ?>&method=edit' class='button'>Edit</a>
+                        <a href='edit_self.php?std_code=<?= $_SESSION['std_code'] ?>&Status_user=<?= $_SESSION['Status_user'] ?>&method=edit' title="แก้ไข" class='button'>Edit</a>
                     </div>
                 </div>
 
@@ -52,7 +52,7 @@ $row = $result->fetch_object();
                         <?php
                         $strsql = "SELECT * FROM activity a
 INNER JOIN history_act h ON h.act_id=a.act_id
-WHERE h.std_code='" . $_SESSION['std_code'] . "' AND h.status_regis=0";
+WHERE h.std_code='" . $_SESSION['std_code'] . "' AND h.status_regis=1";
                         
                         $result = mysqli_query($conn, $strsql);
                         while ($rs = mysqli_fetch_array($result)) {

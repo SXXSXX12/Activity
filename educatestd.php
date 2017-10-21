@@ -15,7 +15,7 @@
                                 <tr>
                                     <td align='center'>รหัสนักศึกษา</td>
                                     <td align='center'>ชื่อ-สกุล</td>
-                                    <td align='center'>เพิ่มประวัติ</td>
+                                    <td align='center'>เพิ่มประวัติการศึกษา</td>
                                     <td align='center'>เพิ่มผลงาน</td>
                                 </tr>
                                 <?php
@@ -30,8 +30,8 @@
 
                                         <td align='center'><?= $rs['std_code']; ?></td>
                                         <td align='center'><a href="educationtable.php?std_code=<?= $rs['std_code'] ?>"><?php echo $rs ['fname'] . $rs ['lname']; ?></a></td>
-                                        <td align='center'><a href='buildresumestd.php?std_code=<?= $rs['std_code'] ?>' class='#'><img src="images/save.ico" width="40" height="45"></a></td>
-                                        <td align='center'><a href='addfolio.php?std_code=<?= $rs['std_code'] ?>' class='#'><img src="images/book.svg" width="45" height="45"></a></td>
+                                        <td align='center'><a href='buildresumestd.php?std_code=<?= $rs['std_code'] ?>' title="เพิ่มประวัติการศึกษา"><img src="images/save.ico" width="40" height="45"></a></td>
+                                        <td align='center'><a href='addfolio.php?std_code=<?= $rs['std_code'] ?>' title="เพิ่มผลงาน"><img src="images/book.svg" width="45" height="45"></a></td>
                                     </tr>
                                 <?php } ?>
 

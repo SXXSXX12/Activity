@@ -83,7 +83,7 @@ AND (a.year1='$year' OR a.year2='$year' OR a.year3='$year' OR a.year4='$year')";
                             <td align='center'><?php echo $rs['act_datestart']; ?></td>
                             <td align='center'><?php echo $rs['act_dateend']; ?></td>
                             <td align='center'><?php echo $rs['respon_name']; ?></td>
-                            <td align='center'><a href='report_act1.php?act_id=<?= $rs['act_id']?>&year=<?= isset($year)?$year:''?>' class='#'><img src="images/do.png" width="35" height="35"></a></td>
+                            <td align='center'><a href='report_act1.php?act_id=<?= $rs['act_id']?>&year=<?= isset($year)?$year:''?>' title="ดูรายละเอียด"><img src="images/do.png" width="35" height="35"></a></td>
 
                         </tr>
                     <?php } ?>

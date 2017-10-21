@@ -32,7 +32,7 @@ require_once("config/config.php");
 				<header id="header">
                                     <h1><a href="_login.php"><img src="images/icon-home.png" width="55" height="50"></a></a> </h1>
 					<nav id="nav">
-						<ul>
+                                            <ul>
                                                     <li><a href="index.php">Home</a></li>
                                                     <li><a href="tableindex.php">Activity Table</a></li>
                                                         

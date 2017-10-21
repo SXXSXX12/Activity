@@ -19,9 +19,9 @@ $row = $result->fetch_object();
 ?>
 <br>
 <center><ul class="actions">
-        <li><a href="" class="button special">Confirm Activity</a></li>
-        <li><a href='educatestd.php?std_code=<?= $_SESSION['std_code'] ?>' class='button'>Build Resume</a></li>
-        <li><a href='reportstd_act.php?std_code=<?= $_SESSION['std_code'] ?>' class='button'>Activity Data</a></li>
+        <li><a href="" class="button special" title="คอนเฟิร์มกิจกรรม">Confirm Activity</a></li>
+        <li><a href='educatestd.php?std_code=<?= $_SESSION['std_code'] ?>' class='button' title="สร้างประวัติส่วนตัว">Build Resume</a></li>
+        <li><a href='reportstd_act.php?std_code=<?= $_SESSION['std_code'] ?>' class='button' title="ข้อมูลกิจกรรม">Activity Data</a></li>
     </ul></center>
 <!-- Main -->
 <br><br>
@@ -39,7 +39,7 @@ $row = $result->fetch_object();
                         สถานะ : <?= $row->Status_user ?>  <br />
                         อีเมล์ : <?= $row->email ?>  <br />
                         เบอร์โทร : <?= $row->phone ?>  <br /><br>
-                        <a href='edit_self.php?std_code=<?= $_SESSION['std_code'] ?>&Status_user=<?= $_SESSION['Status_user'] ?>&method=edit' class='button'>Edit</a>
+                        <a href='edit_self.php?std_code=<?= $_SESSION['std_code'] ?>&Status_user=<?= $_SESSION['Status_user'] ?>&method=edit' class='button' title="แก้ไข">Edit</a>
                     </div>
                 </div>
 

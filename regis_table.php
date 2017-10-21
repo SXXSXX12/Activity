@@ -7,7 +7,6 @@
     <div class="row">
         <div class="12u">
             <!-- Table -->
-            <section class="box">
                 <div class="table-wrapper">
                     <table>
                         <thead>
@@ -34,7 +33,6 @@
                                     $check = date('Y-m-d', strtotime("$checkDate+14 days "));
                                     if (date('Y-m-d') < $check) {
                                         ?>
-
                                         <tr>
                                             <td align='center'><?= $row_no ?></td>
                                             <td align='center'><?= $rs['act_name']; ?></td>
@@ -44,12 +42,13 @@
                                             <td align='center'><?= DateThai1($rs['act_dateend']) ?></td>
                                             <td align='center'><a href='regisact.php?act_id=<?= $rs['act_id'] ?>' class='#'><img src="images/mask.png" width="40" height="35"></a></td>
                                         </tr>		
-    <?php }
-}
-?>
+                                    <?php
+                                    }
+                                }
+                                ?>
                             </table>
                             </section>
-                        </div>
+                     </div>
                 </div>
             </section>
         </div>

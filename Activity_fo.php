@@ -7,21 +7,15 @@ if(isset($_GET['method'])){
     $rs = mysqli_fetch_array($result);
 }
 ?>
-<br/>
-<center><ul class="actions">
-        <li><a href="admin.php" class="button">Confirm Activity</a></li>
-        <li><a href="educate.php" class="button ">Build Resume</a></li>
-        <li><a href="Activity_fo.php" class="button special">Activity Data</a></li>
-        <li><a href="data_aj.php" class="button">Lecturer Data</a></li>
-        <li><a href="data_student.php" class="button ">Student Data</a></li>
-    </ul></center>
+
 
 <!-- Main -->
 <section id="main" class="container 75%">
     <header>
         <h2>เพิ่มข้อมูลกิจกรรม<h2>
                 </header>
-                <div class="box">
+               <div class="row">
+               <div class="12u">
                     <form name="update" method="POST" action="add_activity.php">
                         <div class="alert alert-info">
                         <div class="row uniform 50%">
@@ -150,6 +144,7 @@ if(isset($_GET['method'])){
                             </div>
                         </div>
                     </form>
+                </div>
                 </div>
                 </div>
                 </section>
