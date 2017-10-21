@@ -13,7 +13,6 @@ $rs = mysqli_fetch_assoc($result);
     <div class="row">
         <div class="12u">
             <!-- Table -->
-            <section class="box">
                 <div class="table-wrapper">
                     <table>
                         <thead>

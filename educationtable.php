@@ -1,7 +1,7 @@
 <?php include_once 'header.php'; ?>
 
 <!-- Table -->
-<section class="box">
+<br><br>
     <div class="panel panel-primary">
         <!-- Default panel contents -->
         <div class="panel-heading">ประวัติการศึกษาและผลงาน</div>

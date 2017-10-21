@@ -2,6 +2,7 @@
 <!-- Main -->
 <section id="main" class="container 75%">
     <form action="question.php" method="post">
+         <div class="alert alert-info">
 
         <div id="loginbox">
             <?php
@@ -140,13 +141,10 @@ WHERE s.std_code= '$std_code'" ;
                             </div><br/>
                             <input type="submit" value=" ส่งแบบประเมิน">
                             <input type="hidden" name="act_id" value="<?= $act_id ?>">
-
-                            </div>
-
-                            </form>
-
-                            </section>
-
-                            <!-- Footer -->
-                            <?php include_once 'footer.php'; ?>
+             </div>
+         </div>
+    </form>
+</section>
+<!-- Footer -->
+<?php include_once 'footer.php'; ?>
 	
