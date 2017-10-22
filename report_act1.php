@@ -84,13 +84,40 @@ GROUP BY act_id";
                             <td align='center'><?= $row_no ?></td>
                             <td align='center'><?php echo $rs['std_code']; ?></td>
                             <td align='center'><?php echo $rs['fullname']; ?></td>
-                            <td align='center'><a href='reportstd_act.php?std_code=<?= $rs['std_code'] ?>' title="ดูรายละเอียด"><img src="images/do.png" width="35" height="35"></a></td>
+                            <td align='center'><a href='reportstd_act.php?std_code=<?= $rs['std_code'] ?>' class='button'>รายละเอียด</a></td>
                         </tr>
                     <?php } ?>
 
 
                 </table>
             </div>
+            <div>
+                <a class="btn btn-success" download="แบบประเมิน.xls" href="#" onClick="return ExcellentExport.excel(this, 'datatable', 'Sheet Name Here');"><i class="fa fa-print"></i> Export to Excel</a>
+                <br><br>
+            <table  id="datatable" width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td>
+            <div class="alert alert-success col-lg-12">
+             <h3>รายงานผลแบบประเมินการเข้าร่วม</h3>
+             <table width='100%'>
+                 <tr>
+                        <th align='center'><h4>รายการ</h4> </th>
+                        <th align='center'><h4>ความถี่</h4></th>
+                        <th align='center'><h4>เปอร์เซ็น</h4></th>
+                    </tr> 
+                    <tr>
+                         <td align='center'>เพศชาย</td>
+                         <td align='center'><?php echo $rs1['men']; ?></td>
+                         <td align='center'><?php echo ($rs1['men']*100)/($rs1['men']+$rs1['women']); ?></td>
+                    </tr>
+                    <tr>
+                        <td align='center'>เพศหญิง</td>
+                        <td align='center'><?php echo $rs1['women']; ?></td>
+                        <td align='center'><?php echo ($rs1['women']*100)/($rs1['men']+$rs1['women']); ?></td>
+                    </tr>
+            </table>
+             
+             </div>
             <div class="alert alert-success col-lg-12">
                 <h3>รายงานผลแบบประเมิน</h3>
                 <table width='100%'>
@@ -234,8 +261,17 @@ GROUP BY act_id";
 
                 </table>
             </div>
+                        </td>
+                    </tr>
+            </table>
         </div>
-    </div>
+            <div align='center'>
+                
+                <a download="แบบประเมิน.xls" href="#" onClick="return ExcellentExport.excel(this, 'datatable', 'Sheet Name Here');" title="พิมพ์สรุปใบกิจกรรม"><img src="images/printer.ico" width="65" height="65" ></a>
+            </div>
+        </div>
+        </div>
+    
 
 
 </section>

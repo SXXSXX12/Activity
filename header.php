@@ -16,6 +16,7 @@ require_once("config/config.php");
 		<script src="bootstrap/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+                <script src="js/excellentexport.js"></script>
 		<style type="text/css">
 			#main-wrapper {
   				font-size: 18px;
@@ -32,7 +33,7 @@ require_once("config/config.php");
 				<header id="header">
                                     <h1><a href="_login.php"><img src="images/icon-home.png" width="55" height="50"></a></a> </h1>
 					<nav id="nav">
-                                            <ul>
+						<ul>
                                                     <li><a href="index.php">Home</a></li>
                                                     <li><a href="tableindex.php">Activity Table</a></li>
                                                         
