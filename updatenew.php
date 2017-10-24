@@ -19,6 +19,6 @@ if(!$sql){
         $sql = mysqli_query($conn, "select rela_id from relations_act where rela_id='rela_id'");
 $chkcode = mysqli_fetch_array($sql);
 if($chkcode =$chkcode ){
-    update_new = mysqli_query($conn, "update relations_act set checkcode='1',std_code='
+    update_new = mysqli_query($conn, "update relations_act set checkcode='1',std_code=');
 }
 ?>

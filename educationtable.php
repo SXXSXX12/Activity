@@ -85,8 +85,8 @@
                             <td align='center'><?php echo $rs ['projectname']; ?></td>
                             <td align='center'><?php echo $rs ['portfolio']; ?></td>
                             <td align='center'><?php echo $rs ['portyear']; ?></td>
-                            <td align='center'><a href='addfolio.php?std_code=<?= $std_code ?>&portfolio_id=<?= $rs['portfolio_id'] ?>&method=edit' class='#'><img src="images/din.png" width="40" height="40"></a></td>
-                            <td align='center'><a href='educationtable.php?std_code=<?= $std_code ?>&portfolio_id=<?= $rs['portfolio_id']; ?>&method=delete' onclick="return confirm('คุณต้องการลบ?')" class='#'><img src="images/2.png" width="40" height="40"></a></td>
+                            <td align='center'><a href='addfolio.php?std_code=<?=$std_code?>&portfolio_id=<?= $rs['portfolio_id'] ?>&method=edit' class='#'><img src="images/din.png" width="40" height="40"></a></td>
+                            <td align='center'><a href='educationtable.php?std_code=<?=$std_code?>&portfolio_id=<?= $rs['portfolio_id']; ?>&method=delete' onclick="return confirm('คุณต้องการลบ?')" class='#'><img src="images/2.png" width="40" height="40"></a></td>
                         </tr>
                     <?php } ?>
                  </table>

@@ -1,15 +1,16 @@
 <?php
 include_once 'config/config.php';
-$std_code = $_POST['std_code'];
-$projectname = $_POST['projectname'];
-$portyear = $_POST['portyear'];
-$portfolio = $_POST['portfolio'];
-$method = isset($_POST['method'])?$_POST['method']:'';
+echo $std_code = $_POST['std_code'];
+echo $portfolio_id =$_GET['$portfolio_id'];
+echo $projectname = $_POST['projectname'];
+echo $portyear = $_POST['portyear'];
+echo $portfolio = $_POST['portfolio'];
+echo $method = isset($_POST['method'])?$_POST['method']:'';
 
 if($method=='edit'){
- $edu_id=$_POST['edu_id'];
- $sql=mysqli_query($conn,"update education SET edu_level='$educate ',
-	major ='$major ',intiute='$intiute',endyear='$endyear' where edu_id=$edu_id");
+ $portfolio_id=$_GET['$portfolio_id'];
+ echo $sql=mysqli_query($conn,"update portfolio SET projectname='$projectname',
+	portyear ='$portyear',portfolio='$portfolio' where portfolio_id='$portfolio_id'");
 	if(!$sql){
 		echo "Update not complate ERROR : ".mysqli_error($conn)."";
 	}else{

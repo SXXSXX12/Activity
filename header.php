@@ -17,6 +17,26 @@ require_once("config/config.php");
 		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
                 <script src="js/excellentexport.js"></script>
+                <!--scrip check numberical-->
+                <script type="text/javascript">
+                    function inputDigits(sensor) {
+                        var regExp = /[0-9.-]$/;
+                        if (!regExp.test(sensor.value)) {
+                            alert("กรอกตัวเลขเท่านั้นครับ");
+                            sensor.value = sensor.value.substring(0, sensor.value.length - 1);
+                        }
+                    }
+                </script>
+                <!--scrip check ตัวอักษร-->
+                <script type="text/javascript">
+                    function inputString(sensor) {
+                        var regExp = /[A-Za-zก-ฮะ-็่-๋์]$/;
+                        if (!regExp.test(sensor.value)) {
+                            alert("กรอกตัวอักษรเท่านั้นครับ");
+                            sensor.value = sensor.value.substring(0, sensor.value.length - 1);
+                        }
+                    }
+                </script>
 		<style type="text/css">
 			#main-wrapper {
   				font-size: 18px;
