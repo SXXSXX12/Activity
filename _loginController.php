@@ -2,7 +2,17 @@
 
 session_start();
 require_once("_config.php"); //เรียกใช้งานไฟล์ config.php 
+?>
+<!DOCTYPE HTML>
 
+<html>
+	<head>
+		<title>Activity System</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+                </head>
+	<body>
+                <?php
 $username = $_POST["username"]; //trim(mysql_real_escape_string ป้องกันการ แฮกได้ระดับหนึ่ง
 $password = $_POST["password"];
 $statususer = $_POST["statususer"];
@@ -42,6 +52,8 @@ if (count(@$row) != 0) {
     echo "<a href='_login.php'>Login</a>";
 }
 ?>
+        </body>
+</html>
 
 
 

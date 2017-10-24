@@ -44,7 +44,7 @@
                         <?php
                                     if(isset($_GET['method'])?$_GET['method']:''=='edit'){
                                         echo "<input type='hidden' name='method' value='edit'>";
-                                        echo "<input type='hidden' name='portfolio_id' value='".$std_code."'>";
+                                        echo "<input type='hidden' name='std_code' value='".$std_code."'>";
                                         echo "<input type='hidden' name='portfolio_id' value='".$portfolio_id."'>";
                                         echo "<input type='submit' name='submit' value='บันทึก'>";
                                     }else{
@@ -53,9 +53,6 @@
                                                         <input type="reset" class="button special" value=" ยกเลิก " /></h4>
 							
                                     <?php }?>		
-                        <input type="hidden" name="std_code" value="<?= $_GET['std_code'] ?>">
-                        <input type="hidden" name="portfolio_id" value="<?= $_GET['$portfolio_id'] ?>">
-                        <input type="submit" value="submit">
                     </div>
                 </div>
             </form>

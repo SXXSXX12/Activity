@@ -37,11 +37,11 @@
 
                     </thead>
                     <?php
-                    $std_code = $_GET['std_code'];
+//                    $std_code = $_GET['std_code'];
                     $strsql = "SELECT e1.edu_id,e1.major,e2.educate_name,e1.intiute,e1.endyear
                                            FROM education e1 
                                            INNER JOIN educate e2 on e2.educate_id=e1.edu_level
-                                           WHERE e1.std_code='$std_code'";
+                                           WHERE e1.std_code=$std_code";
                     $result = mysqli_query($conn, $strsql);
                     $row_no = 0;
                     while ($rs = mysqli_fetch_array($result)) {
@@ -74,7 +74,7 @@
                     <?php
                   $strsql1 = "SELECT p.portfolio_id,p.projectname,p.portfolio,p.portyear
                              FROM portfolio p
-                             WHERE std_code='$std_code'";
+                             WHERE std_code=$std_code";
                     $result1 = mysqli_query($conn, $strsql1);
                     $row_no1 = 0;
                     while ($rs = mysqli_fetch_array($result1)) {
