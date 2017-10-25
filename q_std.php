@@ -21,6 +21,18 @@
                     <h5>เพศ</h5>	
                     <?php 
                     $std_code=$_GET['std_code'];
+                    $year = substr($std_code, 0, 2);
+                    $nowYear = date('y')+43;
+                    if($year==$nowYear){
+                        $year_class = '1';
+                    }elseif ($year==$nowYear-1) {
+                        $year_class = '2';
+                    }elseif ($year==$nowYear-2) {
+                        $year_class = '3';
+                    }elseif ($year==$nowYear-3) {
+                        $year_class = '4';
+                    }
+                    
                     $strsql1 = "SELECT s.pname FROM student s
 WHERE s.std_code= '$std_code'" ;
              $result1 = mysqli_query($conn, $strsql1);
@@ -31,15 +43,11 @@ WHERE s.std_code= '$std_code'" ;
                echo "หญิง";  
             }
             ?>
-                    
-                    <h5>สถานะทางการศึกษา</h5>	
-                    <select name="year" required>
-                        <option value="">--กรุณาเลือก--</option>
-                        <option value="1">ชั้นปีที่ 1</option>
-                        <option value="2">ชั้นปีที่ 2</option>
-                        <option value="3">ชั้นปีที่ 3</option>
-                        <option value="4">ชั้นปีที่ 4</option>
-                    </select><br/>
+                    <input type="hidden" name="sex" value="<?=$rs1['pname']?>">    
+                    <h5>สถานะทางการศึกษา</h5>
+                    ชั้นปีที่ <?= $year_class?>
+                    <input type="hidden" name="year" value="<?= $year_class?>">
+                    <br/>
                     <h4>ส่วนที่ 2 ข้อมูลความพึงพอใจของผู้ตอบแบบสอบถาม</h4>
                     <h4>ด้านความพึงพอใจในการเข้าร่วมโครงการ</h4><br/>
                     <h5>1.การประชาสัมพันธ์แจ้งข่าวสาร</h5><br/>

@@ -20,7 +20,7 @@ WHERE s.std_code = $std_code AND u.Status_user =$status_user";
 					<div class="row">
 					<div class="12u">
 						
-                                            <form action="editself.php" method="post">
+                                            <form action="editself.php" method="post" enctype="multipart/form-data">
                                                         <div class="alert alert-info">
 							<div id="loginbox">
                                                             <h4>คำนำหน้า
@@ -49,9 +49,10 @@ WHERE s.std_code = $std_code AND u.Status_user =$status_user";
 							<h4>รหัสนักศึกษา <input type="text" name="StudentID" value="<?= isset($_GET['method'])?$rs['std_code']:''?>"/></h4>
 							<h4>ที่อยู่ <input type="text" name="address"value="<?= isset($_GET['method'])?$rs['address']:''?>"/></h4>
 							<h4>วัน-เดือน-ปี-เกิด <input readonly  type="text" name="dateofbirth" class='datepicker' data-date-format="yyyy/mm/dd"value="<?= isset($_GET['method'])?$rs['dateofbirth']:''?>"></h4>
-							<h4>เบอร์โทร <input type="text" name="phone"value=" <?= isset($_GET['method'])?$rs['phone']:''?>"/></h4>	
-                                                        <h4>Username <input type="text" name="email" value=" <?= isset($_GET['method'])?$rs['username']:''?>"/></h4>
-                                                        <h4>Password <input type="text" name="email" value=" <?= isset($_GET['method'])?$rs['password']:''?>"/></h4>
+							<h4>เบอร์โทร <input type="text" name="phone"value="<?= isset($_GET['method'])?$rs['phone']:''?>"/></h4>	
+                                                        <h4>Username <input type="text" name="username" value="<?= isset($_GET['method'])?$rs['username']:''?>"/></h4>
+                                                        <h4>Password <input type="text" name="password" value="<?= isset($_GET['method'])?$rs['password']:''?>"/></h4>
+                                                        <h4> รูปภาพสำหรับ ประวัตินักศึกษา  <input type="file" name="image"  id="image"><br /></h4>
 							<?php
                                     if(isset($_GET['method'])?$_GET['method']:''=='edit'){
                                         echo "<input type='hidden' name='method' value='edit'>";

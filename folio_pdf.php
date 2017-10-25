@@ -11,24 +11,25 @@
 	<body>
             <?php
             include_once 'funtion/funcDateThai.php';
+            $std_code=$_GET['std_code'];
              //$hit_id = $_GET['his_id'];
              $strsql = "SELECT CONCAT((CASE pname
     WHEN 1 THEN 'นาย'
     WHEN 2 THEN 'นางสาว'
 ELSE 'ไม่มีสถานะ' END),fname,' ',lname) as fullname ,dateofbirth,address,phone,email,image
 FROM student 
-WHERE std_code ='5740248123'"; 
+WHERE std_code ='$std_code'"; 
              $result = mysqli_query($conn, $strsql);
              $rs = mysqli_fetch_array($result);
              
              $strsql1 = "SELECT projectname,portfolio,portyear
 FROM portfolio
-WHERE std_code ='6040248101'"; 
+WHERE std_code ='$std_code'"; 
              $resul1 = mysqli_query($conn, $strsql1);
              $strsql2 = "SELECT e1.educate_name,e.endyear,e.major,e.intiute
 FROM education e
 INNER JOIN educate e1 ON e1.educate_id=e.edu_level
-WHERE e.std_code ='5740248136'"; 
+WHERE e.std_code ='$std_code'"; 
              $result2 = mysqli_query($conn, $strsql2);
              require_once ('mpdf60/mpdf.php');//ที่อยู่ของไฟล์ mpdf.phpในเครื่องเรา
              ob_start();//ทำการเก็บค่า html

@@ -12,11 +12,6 @@
     <header>
         <h2>ข้อมูลกิจกรรม</h2>
     </header>
-    <div class="row">
-        <div class="12u">
-            <!-- Table -->
-                <div class="table-wrapper">
-                    <table>
                         <thead>
                         <div class="row uniform 1000%">
                             <table width='600' align='center'>
@@ -60,7 +55,7 @@ ORDER BY act_id DESC";
                                         <?php if (empty($rs['check_act'])) { ?>
                                             <td align='center'><a href='randomcode.php?act_id=<?= $rs['act_id'] ?>' class='#'><img src="images/das.png" width="35" height="35"></a></td>
                                         <?php } else { ?>
-                                            <td align='center'><a href='code.php?act_id=<?= $rs['act_id'] ?>' title="พิมพ์โค้ดกิจกรรม"><img src="images/printer.ico" width="35" height="35"></a></td>
+                                            <td align='center'><a href='code.php?act_id=<?= $rs['act_id'] ?>' title="พิมพ์โค้ดกิจกรรม" target="_blank"><img src="images/printer.ico" width="35" height="35"></a></td>
                                         <?php } ?>
                                         <td align='center'><a href='Activity_fo.php' title="เพิ่มกิจกรรม"><img src="images/save.ico" width="40" height="45"></a></td>
                                         <td align='center'><a href='Activity_fo.php?act_id=<?= $rs['act_id'] ?>&method=edit' title="แก้ไขกิจกรรม"><img src="images/din.png" width="35" height="35"></a></td>
@@ -69,10 +64,5 @@ ORDER BY act_id DESC";
                                 <?php } ?>
                             </table>
                          </section>
-                     </div>
-                </div>
-            </section>
-        </div>
-    </div>
-</div>
+
 <?php include_once 'footer.php'; ?>

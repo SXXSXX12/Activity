@@ -16,6 +16,12 @@
                         $strsql = "delete FROM education WHERE edu_id=$edu_id";
                         $result = mysqli_query($conn, $strsql) or die(mysqli_error($conn));
                     }
+                    if (isset($_GET['method1'])) {
+                        $method1 = $_GET['method1'];
+                        $portfolio_id = $_GET['portfolio_id'];
+                        $strsql = "delete FROM portfolio WHERE portfolio_id=$portfolio_id";
+                        $result = mysqli_query($conn, $strsql) or die(mysqli_error($conn));
+                    }
                     $std_code = $_GET['std_code'];
                     $strsql = "SELECT * FROM student WHERE std_code=$std_code";
 
@@ -54,7 +60,7 @@
                             <td align='center'><?php echo $rs ['intiute']; ?></td>
                             <td align='center'><?php echo $rs ['endyear']; ?></td>
                             <td align='center'><a href='buildresumeadmin.php?std_code=<?= $std_code ?>&edu_id=<?= $rs['edu_id'] ?>&method=edit' class='#'><img src="images/din.png" width="40" height="40"></a></td>
-                            <td align='center'><a href='educationtable.php?std_code=<?= $std_code ?>&edu_id=<?= $rs['edu_id']; ?>&method=delete' onclick="return confirm('คุณต้องการลบ?')" class='#'><img src="images/2.png" width="40" height="40"></a></td>
+                            <td align='center'><a href='educationtable.php?std_code=<?= $std_code ?>&edu_id=<?= $rs['edu_id']; ?>&method=delete' onclick="return confirm('คุณต้องการลบหรือไม่?')" class='#'><img src="images/2.png" width="40" height="40"></a></td>
                         </tr>
                     <?php } ?>
                     <input type="hidden" name="edu_id" value="<?= $edu_id ?>">
@@ -86,12 +92,12 @@
                             <td align='center'><?php echo $rs ['portfolio']; ?></td>
                             <td align='center'><?php echo $rs ['portyear']; ?></td>
                             <td align='center'><a href='addfolio.php?std_code=<?=$std_code?>&portfolio_id=<?= $rs['portfolio_id'] ?>&method=edit' class='#'><img src="images/din.png" width="40" height="40"></a></td>
-                            <td align='center'><a href='educationtable.php?std_code=<?=$std_code?>&portfolio_id=<?= $rs['portfolio_id']; ?>&method=delete' onclick="return confirm('คุณต้องการลบ?')" class='#'><img src="images/2.png" width="40" height="40"></a></td>
+                            <td align='center'><a href='educationtable.php?std_code=<?=$std_code?>&portfolio_id=<?= $rs['portfolio_id']; ?>&method1=delete' onclick="return confirm('คุณต้องการลหรือไม่?')" class='#'><img src="images/2.png" width="40" height="40"></a></td>
                         </tr>
                     <?php } ?>
                  </table>
             </div>
-            <div align='center'><a href='folio_pdf.php' title="พิมพ์ใบ portfolio"><img src="images/printer.ico" width="65" height="65" ></a></div>
+            <div align='center'><a href='folio_pdf.php?std_code=<?=$std_code?>' title="พิมพ์ใบ portfolio"><img src="images/printer.ico" width="65" height="65" ></a></div>
         </div>
     </div>
 </section>
