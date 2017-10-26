@@ -19,46 +19,52 @@ $row = $result->fetch_object();
         <li><a href="_showaj.php" class="button">Activity Data</a></li>
         <li><a href="data_aj.php" class="button">Lectuere Data</a></li>
         <li><a href="datastd_aj.php" class="button">Student Data</a></li>
-
-    </ul></center>
+    </ul></center><br>
 <!-- Main -->
-
 <div id="main-wrapper">
     <div class="container">
-        <div class="row">
-            <div class="12u">
-                <section>
-                    <header class="major">
-
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-5 well well-lg">
+                    <header>
+                        <h3>ข้อมูลผู้ใช้</h3>
                     </header>
-                    <div class="row">
-                        <div class="6u">
-                            <section class="box">
-                                <header>
-                                    <h3>ข้อมูลผู้ใช้</h3>
-                                </header>
-                                <div id="loginbox">
-                                    ชื่อ-นามสกุล : <?= $row->tfull ?><br />
-                                    อีเมล์ : <?= $row->email ?> <br />
-                                    เบอร์โทร : <?= $row->phone ?>  <br />
-                                    <a href="editaj.php"><input type="submit" value=" Edit "/></a>
-                                </div>
-                                </form>
-                            </section>
-                        </div>
-                        <div class="6u">
-                            <section class="box">
-                                <header>
-                                    <h3>No Activity responsible</h3>
-                                </header>
-                                <form action="Insertion4.php" method="post">
-                                    <div id="loginbox">
-                                    </div>
-                                </form>
-                            </section>
-                        </div>
+                    <div id="loginbox">
+                        ชื่อ-นามสกุล : <?= $row->tfull ?><br />
+                        อีเมล์ : <?= $row->email ?> <br />
+                        เบอร์โทร : <?= $row->phone ?>  <br />
+                        <a href="editaj.php"><input type="submit" value=" Edit "/></a>
                     </div>
-                </section>
+                </div>
+                <div class="col-md-1"></div>		
+                <div class="col-md-5 well well-lg">
+                    <header>
+                        <h3>กิจกรรมที่รับผิดชอบ</h3>
+                    </header>
+                    <table width='100%' align='center'>
+                    <?php
+                    //$std_code = $_GET['std_code'];
+                    $strsql = "SELECT a.act_id,a.act_name
+FROM activity a
+INNER JOIN teacher t ON t.teach_id = a.respon
+WHERE t.teach_id = '3' ";
+                    $result = mysqli_query($conn, $strsql);
+                    $row_no = 0;
+                    while ($rs = mysqli_fetch_array($result)) {
+                        $row_no++;
+                        ?>
+                        <tr>
+                            <td align='left'><?= $row_no ?></td>
+                            <td align='left'><a href="?act_id=<?= $rs['act_id'] ?>"><?php echo $rs['act_name']; ?></a></td>
+                        </tr>
+                        <?php } ?>
+                    </table>
+
+                    <form action="Insertion4.php" method="post">
+                        <div id="loginbox">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

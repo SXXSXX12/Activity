@@ -9,7 +9,7 @@
         <div class="panel-heading">รายงานการเข้ากิจกรรม</div>
         <div class="panel-body">
             <div class="alert alert-info col-lg-12">
-                <form class="navbar-form navbar-right" action="" method="POST">
+                <form class="navbar-form navbar-left" action="" method="POST">
                     <?php
                     include_once 'funtion/funcDateThai.php';
                     $std_code = $_GET['std_code'];
@@ -42,7 +42,7 @@ WHERE a.year1='$year' OR a.year2='$year' OR a.year3='$year' OR a.year4='$year'";
                     }
                     echo " <br>กิจกรรมที่ต้องเข้าร่วมทั้งหมด " . $rs1['total'] . "กิจกรรม  " ;
                     echo " <br>เข้าร่วมกิจกรรม " . $join . "กิจกรรม คิดเป็น " . $percen . " %";
-                    echo " <br>จำนวนชั่วโมงรวม " . $rs2 ['hour_total'] . " กิจกรรม  " ;
+                    echo " <br>จำนวนชั่วโมงรวม " . $rs2 ['hour_total'] . " ชั่วโมง  " ;
                     ?>
             </div><p>
             <div class="alert alert-success col-lg-12">

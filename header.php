@@ -22,7 +22,7 @@ require_once("config/config.php");
                     function inputDigits(sensor) {
                         var regExp = /[0-9.-]$/;
                         if (!regExp.test(sensor.value)) {
-                            alert("กรอกตัวเลขเท่านั้นครับ");
+                            alert("กรอกตัวเลขเท่านั้นค่ะ");
                             sensor.value = sensor.value.substring(0, sensor.value.length - 1);
                         }
                     }
@@ -32,7 +32,7 @@ require_once("config/config.php");
                     function inputString(sensor) {
                         var regExp = /[A-Za-zก-ฮะ-็่-๋์]$/;
                         if (!regExp.test(sensor.value)) {
-                            alert("กรอกตัวอักษรเท่านั้นครับ");
+                            alert("กรอกตัวอักษรเท่านั้นค่ะ");
                             sensor.value = sensor.value.substring(0, sensor.value.length - 1);
                         }
                     }
