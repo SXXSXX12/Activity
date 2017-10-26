@@ -15,8 +15,8 @@ $row = $result->fetch_object();
 ?>
 <br>
 <center><ul class="actions">
-        <li><a href="Activity_fo.php" class="button">Add Activity </a></li>
-        <li><a href="_showaj.php" class="button">Activity Data</a></li>
+        <li><a href="Activity_aj.php" class="button">Add Activity </a></li>
+        <li><a href="table_aj.php" class="button">Activity Data</a></li>
         <li><a href="data_aj.php" class="button">Lectuere Data</a></li>
         <li><a href="datastd_aj.php" class="button">Student Data</a></li>
     </ul></center><br>

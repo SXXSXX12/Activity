@@ -16,7 +16,7 @@ if(isset($_GET['method'])){
                 </header>
                <div class="row">
                <div class="12u">
-                    <form name="update" method="POST" action="add_activity.php">
+                   <form name="update" method="POST" action="add_activity_aj.php.php">
                         <div class="alert alert-info">
                         <div class="row uniform 50%">
                             <div class="12u )">

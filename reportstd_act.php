@@ -30,7 +30,10 @@ WHERE a.year1='$year' OR a.year2='$year' OR a.year3='$year' OR a.year4='$year'";
                     $result1 = mysqli_query($conn, $strsql1);
                     $rs1 = mysqli_fetch_array($result1); //นำobjectไปใส่array
                     
-                    $result2 = mysqli_query($conn, "SELECT SUM(a.act_hour) as hour_total FROM activity a INNER JOIN history_act h ON a.act_id=h.act_id WHERE h.status_regis=2 AND h.std_code='$std_code'");
+                    $result2 = mysqli_query($conn, "SELECT SUM(a.act_hour) as hour_total 
+FROM activity a 
+INNER JOIN history_act h ON a.act_id=h.act_id 
+WHERE h.status_regis=2 AND h.std_code='$std_code'");
                     
                     $rs2 = mysqli_fetch_array($result2); //นำobjectไปใส่array
                     if ($act_join > 0) {//ถ้านับแถวได้มากว่า0

@@ -37,7 +37,7 @@ echo $year4 = ($year4=='1')?($nowYear-3):'';
 	if(!$sql){
 		echo "Update not complate ERROR : ".mysqli_error($conn)."";
 	}else{
-		header("location:table.php"); 
+		header("location:table_aj.php"); 
 	}
 }else{
     $nowYear = date('y')+43;
@@ -52,7 +52,7 @@ $sql=mysqli_query($conn,"insert into activity SET act_name='$act_name',
 	if(!$sql){
 		echo "Insert not complate ERROR : ".mysqli_error($conn)."";
 	}else{
-		header("location:table.php"); 
+		header("location:table_aj.php"); 
 	}
 }
 ?>
