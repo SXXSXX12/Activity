@@ -1,10 +1,10 @@
 <?php include_once 'header.php'; ?>
 <br>                                     
 <center><ul class="actions">
+        <li><a href="Aj.php" class="button">Lectuere Data</a></li>
         <li><a href="Activity_aj.php" class="button">Add Activity </a></li>
-        <li><a href="table_aj.php" class="button">Activity Data</a></li>
-        <li><a href="data_aj.php" class="button">Lectuere Data</a></li>
-        <li><a href="datastd_aj.php" class="button">Student Data</a></li>
+        <li><a href="table_aj.php" class="button special">Activity Data</a></li>
+        <li><a href="data_student_aj.php" class="button">Student Data</a></li>
     </ul></center>
 <!-- Main -->
 <section id="main" class="container">
@@ -30,6 +30,7 @@
                                 include_once 'funtion/funcDateThai.php';
                                 if (isset($_GET['method'])) {
                                     //$method = $_GET['method'];
+                                    //$teach_id = $_GET['teach_id'];
                                     $act_id = $_GET['act_id'];
                                     $strsql = "delete FROM activity WHERE act_id=$act_id";
                                     $result = mysqli_query($conn, $strsql) or die(mysqli_error($conn));
