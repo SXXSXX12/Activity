@@ -1,10 +1,4 @@
 <?php include_once 'header.php'; ?>
-<br>
-<center><ul class="actions">
-      <li><a href="Aj.php" class="button">Lectuere Data</a></li>
-        <li><a href="table_aj.php" class="button">Activity Data</a></li>
-        <li><a href="data_student_aj.php" class="button special">Student Data</a></li>
-    </ul></center>
 <?php  
 // สร้างฟังก์ชั่น สำหรับแสดงการแบ่งหน้า   
 function page_navigator($before_p,$plus_p,$total,$total_p,$chk_page){   
@@ -37,7 +31,7 @@ function page_navigator($before_p,$plus_p,$total,$total_p,$chk_page){
 <!-- Main -->
 <section id="main" class="container">
     <header>
-        <h2>ประวัติการศึกษา</h2>
+        <h2>ตารางกิจกรรม</h2>
     </header>
     <div class="row">
         <div class="12u">
@@ -45,19 +39,27 @@ function page_navigator($before_p,$plus_p,$total,$total_p,$chk_page){
                 <div class="table-wrapper">
                     <table>
                         <thead>
-                        <div class="row uniform 100%">
-                            <table width='100%' align='center' id="example3">
+                        <div class="row uniform 1000%">
+                            <table width='600' align='center' id="example3">
                                 <tr>
                                     <td align='center'>ลำดับ</td>
-                                    <td align='center'>รหัสนักศึกษา</td>
-                                    <td align='center'>ชื่อ-สกุล</td>
-                                    <td align='center'>เบอร์โทรศัพท์</td>
-                                    <td align='center'>เพิ่มประวัติการศึกษา</td>
-                                    <td align='center'>เพิ่มผลงาน</td>
+                                    <td align='center'>ชื่อกิจกรรม</td>
+                                    <td align='center'>พิมพ์บัตรกิจกรรมกิจกรรม</td> 
                                 </tr>
                                 <?php
-                                //$std_code = $_GET['std_code'];
-                                $q = "SELECT * FROM student";
+                                include_once 'config/config.php';
+                                include_once 'funtion/funcDateThai.php';
+                               if($_SESSION['Status_user']=='2'){
+                                    $wherecode = "WHERE a.respon=".$_SESSION['std_code']."";
+                                } else {
+                                    $wherecode = "";
+}
+                                $q = "SELECT a.*,c.act_id as check_act 
+FROM activity a
+left join code_activity c on c.act_id=a.act_id
+$wherecode
+group by a.act_id
+ORDER BY act_id DESC";
                                 //$result = mysqli_query($conn, $strsql);
                                 $qr=mysqli_query($conn,$q);
 if($qr==''){exit();}
@@ -85,15 +87,11 @@ echo mysqli_error($conn);
                                     $row_no++;
                                     ?>
                                     <tr>
-                                        <td align='center'><?= ($chk_page*$e_page)+$row_no ?></td>
-                                        <td align='center'><?php echo $rs['std_code']; ?></td>
-                                        <td align='center'><a href="educationtable.php?std_code=<?= $rs['std_code'] ?>"><?php echo $rs ['fname'] . $rs ['lname']; ?></a></td>
-                                        <td align='center'><?php echo $rs['phone']; ?></td>
-                                        <td align='center'><a href='buildresumeadmin.php?std_code=<?= $rs['std_code'] ?>'title="เพิ่มประวัติการศึกษา"><img src="images/save.ico" width="40" height="45"></a></td>
-                                        <td align='center'><a href='addfolio.php?std_code=<?= $rs['std_code'] ?>' title="เพิ่มผลงาน"><img src="images/book.svg" width="45" height="45"></a></td>
-                                    </tr>
+                                        <td align='center'><?=($chk_page*$e_page)+$row_no ?></td>
+                                        <td align='center'><?php echo $rs['act_name']; ?></td>
+                                        <td align='center'><a href='card_group.php?act_id=<?= $rs['act_id'] ?>' title="พิมพ์บัตรกิจกรรม" target="_blank"><img src="images/printer.ico" width="35" height="35"></a></td>
+                                    </tr>		
                                 <?php } ?>
-
                             </table>
                             <?php if($total>0){
 echo mysqli_error($conn);
@@ -108,12 +106,11 @@ echo mysqli_error($conn);
 }
   ?> 
 </div>
-                        </div>
-                    </table>
+                         </section>
+                    </div>
                 </div>
             </section>
         </div>
     </div>
-
-
-    <?php include_once 'footer.php'; ?>
+</div>
+<?php include_once 'footer.php'; ?>

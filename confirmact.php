@@ -1,6 +1,4 @@
 <?php
-
-session_start();
 include_once 'header.php';
 //include_once 'config/config.php';
 include_once 'funtion/function_date.php';
@@ -50,7 +48,8 @@ if (count($chkcode) != 0) {
     } else {
         switch ($_SESSION['Status_user']) {
             case 1:
-                header("location:admin.php?his_id=".$his_id['his_id']."");
+                echo" <META HTTP-EQUIV='Refresh' CONTENT='2;URL=admin.php?his_id=".$his_id['his_id']."'>";
+                //header("location:admin.php?his_id=".$his_id['his_id']."");
                 break;
             case 3:
                 header("location:student.php?his_id=".$his_id['his_id']."");

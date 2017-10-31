@@ -37,7 +37,7 @@ if($method=='edit'){
 	if(!$sql){
 		echo "Update not complate ERROR : ".mysqli_error($conn)."";
 	}else{
-		header("location:student.php"); 
+		header("location:new.php"); 
 	}
 }else{
 $sql=mysqli_query($conn,"insert into relations_act SET date='$date',topic='$topic',descrip='$descrip',"
@@ -45,7 +45,7 @@ $sql=mysqli_query($conn,"insert into relations_act SET date='$date',topic='$topi
 if(!$sql){
 		echo "Update not complate ERROR : ".mysqli_error($conn)."";
 	}else{
-		header("location:student.php"); 
+		header("location:new.php"); 
 	}
 }
 ?>

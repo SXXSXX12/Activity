@@ -11,6 +11,9 @@
                     <table>
                         <thead>
                         <div class="row uniform 1000%">
+                             <?php require_once ('mpdf60/mpdf.php');//ที่อยู่ของไฟล์ mpdf.phpในเครื่องเรา
+             ob_start();//ทำการเก็บค่า html
+             ?>
                             <table width='600' align='center'>
                                 <tr>
                                     <td align='center'>ลำดับ</td>
@@ -46,7 +49,17 @@
                                     </tr>		
                                 <?php } ?>
                             </table>
-                            <center><a href="acttivitytable_pdf.php" align="center" title="พิมพ์ตารางกิจกรรม" target="_blank"><img src="images/printer.ico" width="65" height="65" ></a></center>
+                            <?php
+$html = ob_get_contents();
+ob_clean();
+$pdf = new mPDF('tha2','A4','10','');
+$pdf->autoScriptToLang = true;
+$pdf->autoLangToFont = true;
+$pdf->SetDisplayMode('fullpage');
+$pdf->WriteHTML($html, 2);
+$pdf->Output("MyPDF/acttivity_table.pdf");
+echo "<meta http-equiv='refresh' content='0;url=MyPDF/acttivity_table.pdf' />";
+?>
                          </section>
                     </div>
                 </div>

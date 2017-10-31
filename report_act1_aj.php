@@ -84,7 +84,7 @@ GROUP BY act_id";
                             <td align='center'><?= $row_no ?></td>
                             <td align='center'><?php echo $rs['std_code']; ?></td>
                             <td align='center'><?php echo $rs['fullname']; ?></td>
-                            <td align='center'><a href='reportstd_act.php?std_code=<?= $rs['std_code'] ?>' class='button'>รายละเอียด</a></td>
+                            <td align='center'><a href='reportstd_act_aj.php?std_code=<?= $rs['std_code'] ?>' class='button'>รายละเอียด</a></td>
                         </tr>
                     <?php } ?>
 
@@ -115,7 +115,7 @@ GROUP BY act_id";
                         <td align='center'><?php echo $rs1['women']; ?></td>
                         <td align='center'><?php echo !empty($rs1['women'])?($rs1['women']*100)/($rs1['men']+$rs1['women']):''; ?></td>
                     </tr>
-                    <tr>
+                      <tr>
                         <td align='center'>รวม</td>
                         <td align='center'><?php echo $rs1['women']+$rs1['men']; ?></td>
                         <td align='center'><?php echo !empty($rs1['women']+$rs1['men'])?($rs1['women']*100)/($rs1['men']+$rs1['women'])+($rs1['men']*100)/($rs1['men']+$rs1['women']):''; ?></td>
@@ -271,7 +271,7 @@ GROUP BY act_id";
             </table>
         </div>
             <div align='center'>
-            </div>
+             </div>
         </div>
         </div>
     

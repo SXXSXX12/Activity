@@ -22,7 +22,7 @@ if (isset($_GET['method'])) {
                                 <div class="row uniform 50%">
                                     <div class="12u )">
                                         <h3>ชื่อกิจกรรม</h3>
-                                        <input type="text" name="act_name" required value="<?= isset($_GET['method']) ? $rs['act_name'] : '' ?>" required/>
+                                        <input type="text" name="act_name" required value="<?= isset($_GET['method']) ? $rs['act_name'] : '' ?>" required />
                                     </div>
                                     <div class="12u">
                                         <h3>วันที่จัดกิจกรรม</h3>
@@ -47,13 +47,13 @@ if (isset($_GET['method'])) {
                                 <div class="row uniform 50%">
                                     <div class="12u ">
                                         <h3>จำนวนชั่วโมงกิจกรรม</h3>
-                                        <input type="text" name="hour" required value="<?= isset($_GET['method']) ? $rs['act_hour'] : '' ?>" required/>
+                                        <input type="text" name="hour" required value="<?= isset($_GET['method']) ? $rs['act_hour'] : '' ?>" required onkeyup="javascript:inputDigits(this);"/>
                                     </div>
                                 </div>
                                 <div class="row uniform 50%">
                                     <div class="12u">
                                         <h3>จำนวนนักศึกษาที่เข้าร่วม/คน</h3>
-                                        <input type="text"  name="group" required value="<?= isset($_GET['method']) ? $rs['act_number'] : '' ?>" required/>	
+                                        <input type="text"  name="group" required value="<?= isset($_GET['method']) ? $rs['act_number'] : '' ?>" required onkeyup="javascript:inputDigits(this);"/>	
                                     </div>
                                     <div class="row uniform 50%">
                                         <h3>เวลาที่จัดกิจกรรม</h3>

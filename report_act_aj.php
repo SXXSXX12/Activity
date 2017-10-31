@@ -1,5 +1,5 @@
 <?php include_once 'header.php'; ?>
- <?php  
+<?php  
 // สร้างฟังก์ชั่น สำหรับแสดงการแบ่งหน้า   
 function page_navigator($before_p,$plus_p,$total,$total_p,$chk_page){   
 	global $e_page;
@@ -81,14 +81,19 @@ AND (a.year1='$year' OR a.year2='$year' OR a.year3='$year' OR a.year4='$year')";
                 } else {
                 $code ="";    
                 }
+                if($_SESSION['Status_user']=='2'){
+                                    $wherecode = "WHERE t.teach_id=".$_SESSION['std_code']."";
+                                } else {
+                                    $wherecode = "";
+}
                 $q = "SELECT a.act_id, a.act_name, a.act_datestart, a.act_dateend, a.start_time, a.act_hour, a.act_location,
                 CONCAT(t.teach_name, t.teach_lname) AS respon_name
                 FROM activity a
                 INNER JOIN teacher t ON t.teach_id = a.respon 
-                $code
+                $code $wherecode
                 ORDER BY a.act_id DESC";
                     //$result = mysqli_query($conn, $strsql);
-                $qr=mysqli_query($conn,$q);
+                    $qr=mysqli_query($conn,$q);
 if($qr==''){exit();}
 $total=mysqli_num_rows($qr);
 $chk_page=''; 
@@ -109,6 +114,7 @@ if(mysqli_num_rows($qr)>=1){
 $total_p=ceil($total/$e_page);   
 $before_p=($chk_page*$e_page)+1;  
 echo mysqli_error($conn);
+                
                 ?>
             </div><p>
             <div class="alert alert-success col-lg-12">
@@ -128,17 +134,15 @@ echo mysqli_error($conn);
                         $row_no++;
                         ?>
                         <tr>
-                            <td align='center'><?= ($chk_page*$e_page)+$row_no ?></td>
+                            <td align='center'><?=($chk_page*$e_page)+$row_no ?></td>
                             <td align='center'><?php echo $rs['act_name']; ?></td>
                             <td align='center'><?php echo DateThai1($rs['act_datestart']) ?></td>
                             <td align='center'><?php echo DateThai1($rs['act_dateend']) ?></td>
                             <td align='center'><?php echo $rs['respon_name']; ?></td>
-                            <td align='center'><a href='report_act1.php?act_id=<?= $rs['act_id']?>&year=<?= isset($year)?$year:''?>' title="ดูรายละเอียด"><img src="images/do.png" width="35" height="35"></a></td>
+                            <td align='center'><a href='report_act1_aj.php?act_id=<?= $rs['act_id']?>&year=<?= isset($year)?$year:''?>' title="ดูรายละเอียด"><img src="images/do.png" width="35" height="35"></a></td>
 
                         </tr>
                     <?php } ?>
-
-
                 </table>
                 <?php if($total>0){
 echo mysqli_error($conn);

@@ -36,7 +36,11 @@ $result = $conn->query($sql); //สั่งให้ตัวแปร sql ท�
 
 @$row = $result->fetch_object();
 if (count(@$row) != 0) {
-    $_SESSION['std_code'] = @$row->std_code;
+    if ($statususer == '2') {
+    $_SESSION['std_code'] = @$row->teach_id;
+    } else {
+    $_SESSION['std_code'] = @$row->std_code;    
+    }
     $_SESSION['fullname'] = @$row->fullname;
     $_SESSION['Status_user'] = @$row->Status_user;
     'ยินดีต้อนรับเข้าสู่ระบบ';
