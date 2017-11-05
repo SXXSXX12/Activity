@@ -24,7 +24,7 @@ if (isset($_GET['method'])) {
                         E-mail <input type="email" name="email" required/><br />             			
                         Password <input type="password" name="password1" required/><br />
                         Confirm-Password <input type="password" name="password2" required/><br />
-                        <input type="submit" value="Register" required></a>
+                        <input type="submit" value="Register" required>
                     </div>
                 </div>
                 <input type="hidden" name="method" value="std">

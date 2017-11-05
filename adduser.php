@@ -1,3 +1,11 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Activity System</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+                </head>
+	<body>
 <?php
 include_once 'config/config.php';
 $stu_id = $_POST['stu_id'];
@@ -18,7 +26,7 @@ if (!$sql) {
 	echo "<script>alert('บันทึกไม่สมบูรณ์กรุณาบันทึกใหม่');</script>";
 	echo "<META HTTP-EQUIV='Refresh' CONTENT='2;URL=_register.php'>";
 }else{
-	echo "<script>alert('บันทึกสำเร็จแล้ว');</script>";
+	echo "<script>alert('สมัครสมาชิกเรียบร้อยแล้วค่ะ');</script>";
 	echo "<META HTTP-EQUIV='Refresh' CONTENT='1;URL=_login.php'>";
 }
 }else{
@@ -27,3 +35,5 @@ if (!$sql) {
 	exit();
 }
 ?>
+   </body>
+</html>

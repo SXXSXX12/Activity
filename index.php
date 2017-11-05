@@ -13,21 +13,19 @@
 
             <!-- Header -->
             <header id="header" class="alt">
-                <h1><a href="index.html">COMPUTERSCI</h1>
+                <h1><a href="#">COMPUTERSCI</h1>
                 <nav id="nav">
                     <ul>
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="tableindex.php">Activity Table</a></li>
-                        <li><a href="regis_table.php">Regis Activity</a></li>
-                        <li><a href="_login.php">Sign In</a></li>
+                        <li><a href="index.php" title="หน้าหลัก">Home</a></li>
+                        <li><a href="tableindex.php" title="ตารางกิจกรรม">Activity Table</a></li>
+                        <li><a href="regis_table.php" title="ลงทะเบียนกิจกรรม">Regis Activity</a></li>
+                        <li><a href="_login.php" title="เข้าสู่ระบบ">Sign In</a></li>
 
                     </ul>
                     </li>
                     </ul>
                     </li>
-
             </header>
-
             <!-- Banner -->
             <section id="banner">
                 <h2>Activity System of Computer Science Students</h2>
@@ -73,14 +71,10 @@
                             <h4>กิจกรรมค่ายอาสา</h4>
                             <p>กิจกรรมค่ายอาสา ฝึกวินัย การแบ่งปันสิ่งของให้กับคนที่ขาดแคลน เป็นสิ่งหนึ่งที่เพื่อนมนุษย์มีคือน้ำใจ</p>
                         </section>
-                    </div>
-                </section>
-
-
-
+                   </div>
+             </section>
         </div>
     </div>
-
 </section>
 
 
@@ -92,9 +86,7 @@
         <p><p>สงวนสิขสิทธิ์ © พ.ศ.2556, มหาวิทยาลัยราชภัฏเลย พัฒนาโดย คณะวิทยาศาสตร์และเทคโนโลยี สาขาวิชาวิทยาการคอมพิวเตอร์</p></p>
     </ul>
 </footer>
-
 </div>
-
 <!-- Scripts -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/jquery.dropotron.min.js"></script>

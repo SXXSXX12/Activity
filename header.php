@@ -56,11 +56,11 @@ require_once("config/config.php");
 
             <!-- Header -->
             <header id="header">
-                <h1><a href="_login.php"><img src="images/icon-home.png" width="55" height="50"></a></a> </h1>
+                <h1><a href="#"><img src="images/icon-home.png" width="55" height="50"></a></a> </h1>
                 <nav id="nav">
                     <ul>
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="tableindex.php">Activity Table</a></li>
+                        <li><a href="index.php" title="หน้าหลัก">Home</a></li>
+                        <li><a href="tableindex.php" title="ตารางกิจกรรม">Activity Table</a></li>
 
                         <?php
                         if (empty($_SESSION['Status_user'])) {

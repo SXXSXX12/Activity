@@ -31,7 +31,7 @@ function page_navigator($before_p,$plus_p,$total,$total_p,$chk_page){
 <!-- Main -->
 <section id="main" class="container">
     <header>
-        <h2>ตารางกิจกรรม</h2>
+        <h2>บัตรกิจกรรม</h2>
     </header>
     <div class="row">
         <div class="12u">
@@ -44,7 +44,7 @@ function page_navigator($before_p,$plus_p,$total,$total_p,$chk_page){
                                 <tr>
                                     <td align='center'>ลำดับ</td>
                                     <td align='center'>ชื่อกิจกรรม</td>
-                                    <td align='center'>พิมพ์บัตรกิจกรรมกิจกรรม</td> 
+                                    <td align='center'>พิมพ์บัตรกิจกรรม</td> 
                                 </tr>
                                 <?php
                                 include_once 'config/config.php';
