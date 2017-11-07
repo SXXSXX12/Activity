@@ -10,19 +10,7 @@
                 <header>
                     <h2>ประวัติการศึกษา</h2> 
                     <?php
-                    if (isset($_GET['method'])) {
-                        $method = $_GET['method'];
-                        $edu_id = $_GET['edu_id'];
-                        $strsql = "delete FROM education WHERE edu_id=$edu_id";
-                        $result = mysqli_query($conn, $strsql) or die(mysqli_error($conn));
-                    }
-                    if (isset($_GET['method1'])) {
-                        $method1 = $_GET['method1'];
-                        $portfolio_id = $_GET['portfolio_id'];
-                        $strsql = "delete FROM portfolio WHERE portfolio_id=$portfolio_id";
-                        $result = mysqli_query($conn, $strsql) or die(mysqli_error($conn));
-                    }
-                    $std_code = $_GET['std_code'];
+                  $std_code = $_GET['std_code'];
                     $strsql = "SELECT * FROM student WHERE std_code=$std_code";
 
                     $result = mysqli_query($conn, $strsql);
@@ -38,10 +26,7 @@
                     <td align='center'>วุฒิการศึกษา</td>
                     <td align='center'>สถาบันที่จบ</td>
                     <td align='center'>ปีที่จบการศึกษา</td>
-                    <td align='center'>แก้ไข</td>
-                    <td align='center'>ลบ</td>
-
-                    </thead>
+                   </thead>
                     <?php
 //                    $std_code = $_GET['std_code'];
                     $strsql = "SELECT e1.edu_id,e1.major,e2.educate_name,e1.intiute,e1.endyear
@@ -59,8 +44,6 @@
                             <td align='center'><?php echo $rs ['educate_name']; ?></td>
                             <td align='center'><?php echo $rs ['intiute']; ?></td>
                             <td align='center'><?php echo $rs ['endyear']; ?></td>
-                            <td align='center'><a href='buildresumeadmin.php?std_code=<?= $std_code ?>&edu_id=<?= $rs['edu_id'] ?>&method=edit' class='#'><img src="images/din.png" width="40" height="40"></a></td>
-                            <td align='center'><a href='educationtable.php?std_code=<?= $std_code ?>&edu_id=<?= $rs['edu_id']; ?>&method=delete' onclick="return confirm('คุณต้องการลบหรือไม่?')" class='#'><img src="images/2.png" width="40" height="40"></a></td>
                         </tr>
                     <?php } ?>
                     <input type="hidden" name="edu_id" value="<?= $edu_id ?>">
@@ -74,9 +57,7 @@
                     <td align='center'>ชื่อผลงาน</td>
                     <td align='center'>รายละเอียดผลงาน</td>
                     <td align='center'>ปีที่ทำผลงาน</td>
-                    <td align='center'>แก้ไข</td>
-                    <td align='center'>ลบ</td>
-                    </thead>
+                     </thead>
                     <?php
                   $strsql1 = "SELECT p.portfolio_id,p.projectname,p.portfolio,p.portyear
                              FROM portfolio p
@@ -91,9 +72,7 @@
                             <td align='center'><?php echo $rs ['projectname']; ?></td>
                             <td align='center'><?php echo $rs ['portfolio']; ?></td>
                             <td align='center'><?php echo $rs ['portyear']; ?></td>
-                            <td align='center'><a href='addfolio.php?std_code=<?=$std_code?>&portfolio_id=<?= $rs['portfolio_id'] ?>&method=edit' class='#'><img src="images/din.png" width="40" height="40"></a></td>
-                            <td align='center'><a href='educationtable.php?std_code=<?=$std_code?>&portfolio_id=<?= $rs['portfolio_id']; ?>&method1=delete' onclick="return confirm('คุณต้องการลหรือไม่?')" class='#'><img src="images/2.png" width="40" height="40"></a></td>
-                        </tr>
+                         </tr>
                     <?php } ?>
                  </table>
             </div>

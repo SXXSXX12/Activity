@@ -21,7 +21,7 @@ $sql=mysqli_query($conn,"insert into portfolio SET std_code='$std_code',projectn
 if(!$sql){
 		echo "Update not complate ERROR : ".mysqli_error($conn)."";
 	}else{
-		header("location:educate.php"); 
+		header("location:educatestd.php?std_code=$std_code"); 
 	}
 }
 

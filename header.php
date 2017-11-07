@@ -56,12 +56,12 @@ require_once("config/config.php");
 
             <!-- Header -->
             <header id="header">
-                <h1><a href="#"><img src="images/icon-home.png" width="55" height="50"></a></a> </h1>
+                <h1><a href="_login.php"><img src="images/icon-home.png" width="55" height="50"></a></a> </h1>
                 <nav id="nav">
                     <ul>
-                        <li><a href="index.php" title="หน้าหลัก">Home</a></li>
-                        <li><a href="tableindex.php" title="ตารางกิจกรรม">Activity Table</a></li>
-
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="tableindex.php">Activity Table</a></li>
+                        <li><a href="regis_table.php">Regis Activity</a></li>
                         <?php
                         if (empty($_SESSION['Status_user'])) {
                             echo "<li><a href='_login.php'>Sign In</a></li>";
@@ -70,29 +70,42 @@ require_once("config/config.php");
                             <li>
                                 <a href="#" class="icon fa-angle-down"><?= $_SESSION['fullname'] ?></a>
                                 <ul>
-    <?php if ($_SESSION['Status_user'] == '1') { ?>
+                                    <?php if ($_SESSION['Status_user'] == '1') { ?>
                                         <li><a href="admin.php">หน้าหลัก</a></li>
-                                        <li><a href="add_stddata.php">เพิ่มข้อมูลนักศึกษา</a></li>
+                                        <li>
+                                            <a href="add_stddata.php">เพิ่มข้อมูลนักศึกษา</a>
+                                        <ul>
+                                            <li><a href="importcsv.php">Import Excel</a></li>
+                                        </ul>
+                                        </li>
                                         <li><a href="add_aj.php">เพิ่มข้อมูลอาจารย์</a></li>
                                         <li><a href="Activity_fo.php">เพิ่มข้อมูลกิจกรรม</a></li>
-                                        <li><a href="new.php">จัดการประชาสัมพันธ์</a></li>
+                                        <li><a href="new.php">จัดการประชาสัมพันธ์</a>
+                                        <ul>
+                                            <li><a href="update_new.php">เพิ่มข่าวประชาสัมพันธ์</a></li>
+                                        </ul>
+                                        </li>
                                         <li><a href="report_act.php">รายงานการเข้ากิจกรรม</a></li>
                                         <li><a href="print_actcard.php">พิมพ์บัตรกิจกรรม</a></li>
-    <?php } elseif ($_SESSION['Status_user'] == '2') { ?>
+                                    <?php } elseif ($_SESSION['Status_user'] == '2') { ?>
                                         <li><a href="Aj.php">หน้าหลัก</a></li>
                                         <li><a href="Activity_aj.php">เพิ่มข้อมูลกิจกรรม</a></li>
-                                        <li><a href="new.php">จัดการข่าวประชาสัมพันธ์</a></li>
+                                        <li><a href="new.php">จัดการข่าวประชาสัมพันธ์</a>
+                                        <ul>
+                                            <li><a href="update_new.php">เพิ่มข่าวประชาสัมพันธ์</a></li>
+                                        </ul>
+                                        </li>
                                         <li><a href="report_act_aj.php">รายงานการเข้ากิจกรรม</a></li>
                                         <li><a href="print_actcard_aj.php">พิมพ์บัตรกิจกรรม</a></li>
                                     <?php } elseif ($_SESSION['Status_user'] == '3') { ?>
                                         <li><a href="student.php">หน้าหลัก</a></li>
-    <?php } ?> 
+                                    <?php } ?> 
 
                                     <li><a href="logout.php" onclick="return confirm('คุณต้องการออกจากระบบหรือไม่');">ออกจากระบบ</a></li>
                                 </ul>
                             </li>
 
-<?php } ?>
+                        <?php } ?>
                     </ul>	
                 </nav>
             </header>

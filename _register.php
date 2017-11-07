@@ -20,14 +20,21 @@ if (isset($_GET['method'])) {
             <form action="adduser.php" method="post">
                 <div class="alert alert-info">
                     <div id="loginbox">
-                        รหัสประจำตัว <input type="text" name="stu_id" required/><br />
+                        รหัสประจำตัว <input type="text" name="stu_id" required onkeyup="javascript:inputDigits(this);"/><br />
                         E-mail <input type="email" name="email" required/><br />             			
                         Password <input type="password" name="password1" required/><br />
-                        Confirm-Password <input type="password" name="password2" required/><br />
-                        <input type="submit" value="Register" required>
+                        Confirm-Password <input type="password" name="password2" required/><br /> 
+                            <h4>Status</h4>
+                            <select name="statususer">
+                                <option value="3">เลือกสถานะ</option>
+                                <option value="3">นักศึกษา</option>
+                                <option value="2">อาจารย์</option>
+                                <option value="1">ผู้ดูแลระบบ</option>
+                            </select>
+                            <br>
+                            <div align='center'><input type="submit"  value="Register" ></div>
                     </div>
                 </div>
-                <input type="hidden" name="method" value="std">
             </form>
         </section>
     </div

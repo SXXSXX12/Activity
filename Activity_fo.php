@@ -46,7 +46,7 @@ if (isset($_GET['method'])) {
                                 </div>
                                 <div class="row uniform 50%">
                                     <div class="12u ">
-                                        <h3>จำนวนชั่วโมงกิจกรรม</h3>
+                                        <h3>จำนวนชั่วโมงกิจกรรม (ไม่เกิน12ชั่วโมง)</h3>
                                         <input type="text" name="hour" required value="<?= isset($_GET['method']) ? $rs['act_hour'] : '' ?>" required onkeyup="javascript:inputDigits(this);"/>
                                     </div>
                                 </div>

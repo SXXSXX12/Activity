@@ -90,7 +90,7 @@ echo mysqli_error($conn);
                                         <td align='center'><?php echo $rs['std_code']; ?></td>
                                         <td align='center'><a href="educationtable.php?std_code=<?= $rs['std_code'] ?>"><?php echo $rs ['fname'] . $rs ['lname']; ?></a></td>
                                         <td align='center'><a href='buildresumeadmin.php?std_code=<?= $rs['std_code'] ?>'title="เพิ่มประวัติการศึกษา"><img src="images/save.ico" width="40" height="45"></a></td>
-                                        <td align='center'><a href='addfolio.php?std_code=<?= $rs['std_code'] ?>' title="เพิ่มผลงาน"><img src="images/book.svg" width="45" height="45"></a></td>
+                                        <td align='center'><a href='addfolio.php?std_code=<?= $rs['std_code']?>' title="เพิ่มผลงาน"><img src="images/book.svg" width="45" height="45"></a></td>
                                     </tr>
                                 <?php } ?>
 

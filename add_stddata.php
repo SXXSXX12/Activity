@@ -42,10 +42,10 @@
                                                             </h4>    
                                                             <h4>ชื่อ<input type="text" name="fname" value="<?= isset($_GET['method'])?$rs['fname']:''?>" required onkeyup="javascript:inputString(this);"/></h4>
 							<h4>สกุล<input type="text" name="lname"value=" <?= isset($_GET['method'])?$rs['lname']:''?>" required onkeyup="javascript:inputString(this);"/></h4>
-                                                        <h4>รหัสนักศึกษา <input type="text" name="StudentID" value="<?= isset($_GET['method'])?$rs['std_code']:''?>" required onkeyup="javascript:inputDigits(this);"/></h4>
-							<h4>ที่อยู่ <input type="text" name="address"value="<?= isset($_GET['method'])?$rs['address']:''?>" required/></h4>
-							<h4>วัน-เดือน-ปี-เกิด <input readonly  type="text" name="dateofbirth" class='datepicker' data-date-format="yyyy/mm/dd"value="<?= isset($_GET['method'])?$rs['dateofbirth']:''?>" required></h4>
-							<h4>เบอร์โทร <input type="text" name="phone"value=" <?= isset($_GET['method'])?$rs['phone']:''?>" required onkeyup="javascript:inputDigits(this);"/></h4>	
+                                                        <h4>รหัสนักศึกษา <input type="text" name="StudentID" value="<?= isset($_GET['method'])?$rs['std_code']:''?>"  onkeyup="javascript:inputDigits(this);"/></h4>
+							<h4>ที่อยู่ <input type="text" name="address"value="<?= isset($_GET['method'])?$rs['address']:''?>" /></h4>
+							<h4>วัน-เดือน-ปี-เกิด <input readonly  type="text" name="dateofbirth" class='datepicker' data-date-format="yyyy/mm/dd"value="<?= isset($_GET['method'])?$rs['dateofbirth']:''?>" ></h4>
+							<h4>เบอร์โทร <input type="text" name="phone"value=" <?= isset($_GET['method'])?$rs['phone']:''?>" onkeyup="javascript:inputDigits(this);"/></h4>	
                                                         <h4>E-mail <input type="text" name="email" value=" <?= isset($_GET['method'])?$rs['email']:''?>" required/></h4>
                                                        <h4> รูปภาพสำหรับ ประวัตินักศึกษา  <input type="file" name="image"  id="image"><br /></h4>
 							<?php

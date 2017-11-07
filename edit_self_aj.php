@@ -27,27 +27,6 @@ $wherecode AND u.Status_user =$status_user";
                                             <form action="editselfaj.php" method="post" enctype="multipart/form-data">
                                                         <div class="alert alert-info">
 							<div id="loginbox">
-                                                            <h4>คำนำหน้า
-                                                                <select name="pname" required>
-                                                                    <option value="">เลือกคำนำหน้าชื่อ</option>
-                                                                    <?php if(isset($_GET['method'])){
-                                                                        if($rs['pname']=='1'){?>
-                                                                    <option value="1" selected>นาย</option>
-                                                                    <option value="2">นางสาว</option>
-                                                                        <?php }elseif($rs['pname']=='2'){?>
-                                                                    <option value="1">นาย</option>
-                                                                    <option value="2" selected>นางสาว</option>
-                                                                        <?php }else{ ?>
-                                                                    <option value="1">นาย</option>
-                                                                    <option value="2">นางสาว</option>
-                                                                        <?php }?>
-                                                                    <?php }else{ ?>
-                                                                    
-                                                                    <option value="1">นาย</option>
-                                                                    <option value="2">นางสาว</option>
-                                                                    <?php } ?>
-                                                                </select>
-                                                            </h4>    
                                                             <h4>ชื่อ<input type="text" name="teach_name" value="<?= isset($_GET['method'])?$rs['teach_name']:''?>"required onkeyup="javascript:inputString(this);"/></h4>
                                                             <h4>สกุล<input type="text" name="teach_lname"value="<?=isset($_GET['method'])?$rs['teach_lname']:''?>"required onkeyup="javascript:inputString(this);"/></h4>
                                                         <h4>เบอร์โทร <input type="text" name="phone"value="<?= isset($_GET['method'])?$rs['phone']:''?>"required onkeyup="javascript:inputDigits(this);"/></h4>

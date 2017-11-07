@@ -6,14 +6,14 @@
     $strsql = "SELECT *FROM portfolio WHERE  portfolio_id='$portfolio_id'"; 
     $result = mysqli_query($conn,$strsql);
     $rs = mysqli_fetch_array($result);
-} else {
+}else {
     $std_code = $_GET['std_code'];
 }
 ?>                						   
 
 <section id="main" class="container 75%">
     <div class="12u">
-           <form name="addfolio" action="add_folio.php" method="post" enctype="multipart/form-data">
+           <form name="addfolio" action="add_foliostd.php" method="post" enctype="multipart/form-data">
                 <div class="alert alert-info">
                     <header>
                         <font size="5" color="green">PortFolio </font><br><br>
@@ -48,15 +48,13 @@
                                         echo "<input type='hidden' name='method' value='edit'>";
                                         echo "<input type='hidden' name='std_code' value='".$std_code."'>";
                                         echo "<input type='hidden' name='portfolio_id' value='".$portfolio_id."'>";
-                                        echo "<input type='submit' name='submit' value='แก้ไข'>";
-                                    }else{ ?>
+                                        echo "<input type='submit' name='submit' value='บันทึก'>";
+                                    }else{?>
                                     <input type='hidden' name='std_code' value="<?=$std_code?>">
                                     <h4><input type="submit" value=" บันทึก " />
                                     <input type="reset" class="button special" value=" ยกเลิก " /></h4>
-                                    
                                     <?php }?>		
-                    
-                    </div>             
+                    </div>
                 </div>
             </form>
         </div>

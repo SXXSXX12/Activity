@@ -8,7 +8,7 @@ WHEN 3 THEN 'นักศึกษา'
 ELSE 'ไม่มีสถานะ' END as Status_user
  FROM teacher t
 INNER JOIN `user` u ON u.std_code=t.teach_id
-WHERE u.std_code='1' AND  u.Status_user='2'";
+WHERE u.std_code='" . $_SESSION['std_code'] . "' AND  u.Status_user=" . $_SESSION['Status_user'] . "";
 $result = $conn->query($sql); //สั่งให้ตัวแปร sql ทำงาน 
 $row = '';
 $row = $result->fetch_object();
@@ -31,6 +31,7 @@ $row = $result->fetch_object();
                     <div id="loginbox">
                         ชื่อ-นามสกุล : <?= $row->tfull ?><br />
                         อีเมล์ : <?= $row->email ?> <br />
+                        สถานะ : <?= $row->Status_user ?>  <br />
                         เบอร์โทร : <?= $row->phone ?>  <br />
                         <a href='edit_self_aj.php?Status_user=<?= $_SESSION['Status_user'] ?>&method=edit' class='button' title="แก้ไข">Edit</a>
                     </div>

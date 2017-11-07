@@ -46,7 +46,7 @@ function page_navigator($before_p,$plus_p,$total,$total_p,$chk_page){
                                     <td align='center'>หัวเรื่อง</td>
                                     <td align='center'>รายละเอียด</td>
                                     <td align='center'>รูปภาพ</td>
-                                    <td align='center'>วันเริ่มที่อัพเดท</td>
+                                    <td align='center'>วันที่อัพเดต</td>
                                     <td align='center'>เพิ่ม</td>
                                     <td align='center'>แก้ไข</td>
                                     <td align='center'>ลบ</td>

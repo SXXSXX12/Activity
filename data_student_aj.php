@@ -52,8 +52,7 @@ function page_navigator($before_p,$plus_p,$total,$total_p,$chk_page){
                                     <td align='center'>รหัสนักศึกษา</td>
                                     <td align='center'>ชื่อ-สกุล</td>
                                     <td align='center'>เบอร์โทรศัพท์</td>
-                                    <td align='center'>เพิ่มประวัติการศึกษา</td>
-                                    <td align='center'>เพิ่มผลงาน</td>
+                                    <td align='center'>ผลงานนักศึกษา</td>
                                 </tr>
                                 <?php
                                 //$std_code = $_GET['std_code'];
@@ -87,10 +86,9 @@ echo mysqli_error($conn);
                                     <tr>
                                         <td align='center'><?= ($chk_page*$e_page)+$row_no ?></td>
                                         <td align='center'><?php echo $rs['std_code']; ?></td>
-                                        <td align='center'><a href="educationtable.php?std_code=<?= $rs['std_code'] ?>"><?php echo $rs ['fname'] . $rs ['lname']; ?></a></td>
+                                        <td align='center'><?php echo $rs ['fname'] . $rs ['lname']; ?></td>
                                         <td align='center'><?php echo $rs['phone']; ?></td>
-                                        <td align='center'><a href='buildresumeadmin.php?std_code=<?= $rs['std_code'] ?>'title="เพิ่มประวัติการศึกษา"><img src="images/save.ico" width="40" height="45"></a></td>
-                                        <td align='center'><a href='addfolio.php?std_code=<?= $rs['std_code'] ?>' title="เพิ่มผลงาน"><img src="images/book.svg" width="45" height="45"></a></td>
+                                        <td align='center'><a href="educationtable_aj.php?std_code=<?= $rs['std_code'] ?>" title="ดูผลงานนักศึกษา"><img src="images/do.png" width="40" height="45"></a></td>
                                     </tr>
                                 <?php } ?>
 

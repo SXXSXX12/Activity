@@ -3,7 +3,7 @@
     $method = $_GET['method'];
     $std_code = $_GET['std_code'];
     $status_user = $_GET['Status_user'];
-    $strsql = "SELECT u.username,u.`password`,s.phone,s.std_code,s.fname,s.lname,s.address,s.dateofbirth
+    $strsql = "SELECT u.username,u.`password`,s.phone,s.std_code,s.fname,s.lname,s.address,s.dateofbirth,s.email
 FROM `user` u
 INNER JOIN student s ON s.std_code = u.std_code
 WHERE s.std_code = $std_code AND u.Status_user =$status_user"; 
@@ -50,6 +50,7 @@ WHERE s.std_code = $std_code AND u.Status_user =$status_user";
 							<h4>ที่อยู่ <input type="text" name="address"value="<?= isset($_GET['method'])?$rs['address']:''?>"required/></h4>
 							<h4>วัน-เดือน-ปี-เกิด <input readonly  type="text" name="dateofbirth" class='datepicker' data-date-format="yyyy/mm/dd"value="<?= isset($_GET['method'])?$rs['dateofbirth']:''?>"></h4>
 							<h4>เบอร์โทร <input type="text" name="phone"value="<?= isset($_GET['method'])?$rs['phone']:''?>"required onkeyup="javascript:inputDigits(this);"/></h4>	
+                                                        <h4>E-mail <input type="text" name="email"value="<?= isset($_GET['method'])?$rs['email']:''?>"required/></h4>
                                                         <h4>Username <input type="text" name="username" value="<?= isset($_GET['method'])?$rs['username']:''?>"required/></h4>
                                                         <h4>Password <input type="text" name="password" value="<?= isset($_GET['method'])?$rs['password']:''?>"required/></h4>
                                                         <h4> รูปภาพสำหรับ ประวัตินักศึกษา  <input type="file" name="image"  id="image"><br /></h4>

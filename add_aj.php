@@ -20,9 +20,9 @@
                                                         <div class="alert alert-info">
 							<div id="loginbox">
                                                         <h4>ชื่อ<input type="text" name="fname" value="<?=isset($_GET['method'])?$rs['teach_name']:''?>" required onkeyup="javascript:inputString(this);"/></h4>
-                                                        <h4>สกุล<input type="text" name="lname"value=" <?=isset($_GET['method'])?$rs['teach_lname']:''?>" required onkeyup="javascript:inputString(this);"/></h4>
-							<h4>เบอร์โทร <input type="text" name="phone"value=" <?=isset($_GET['method'])?$rs['phone']:''?>" required onkeyup="javascript:inputDigits(this);"/></h4>	
-                                                        <h4>E-mail <input type="text" name="email" value=" <?=isset($_GET['method'])?$rs['email']:''?>" required/></h4>
+                                                        <h4>สกุล<input type="text" name="lname"value="<?=isset($_GET['method'])?$rs['teach_lname']:''?>" required onkeyup="javascript:inputString(this);"/></h4>
+							<h4>เบอร์โทร <input type="text" name="phone"value="<?=isset($_GET['method'])?$rs['phone']:''?>" required onkeyup="javascript:inputDigits(this);"/></h4>	
+                                                        <h4>E-mail <input type="text" name="email" value="<?=isset($_GET['method'])?$rs['email']:''?>" required/></h4>
 							<?php
                                     if(isset($_GET['method'])?$_GET['method']:''=='edit'){
                                         echo "<input type='hidden' name='method' value='edit'>";

@@ -35,6 +35,9 @@ WHERE e.std_code ='$std_code'";
              ob_start();//ทำการเก็บค่า html
              ?>
                    <table border='0' Cellpadding ='5'>
+                       <tr>
+                           <td align='center'><h3> ประวัติส่วนตัว</h3></td>
+                       </tr>
                   <tr>
                       <td style="text-align: center" rowspan="5"><img src="photo/<?=$rs['image'] ?>" width="100"></td>
                       <td>ชื่อ : <?=$rs['fullname'] ?></td>
@@ -71,15 +74,15 @@ WHERE e.std_code ='$std_code'";
             <div>สถานศึกษาที่จบ : <?=$row1['intiute']?></div><hr>
              <?php }?>
 <?php
-//$html = ob_get_contents();
-//ob_clean();
-//$pdf = new mPDF('tha2','A4','10','');
-//$pdf->autoScriptToLang = true;
-//$pdf->autoLangToFont = true;
-//$pdf->SetDisplayMode('fullpage');
-//$pdf->WriteHTML($html, 2);
-//$pdf->Output("MyPDF/Act_card.pdf");
-//echo "<meta http-equiv='refresh' content='0;url=MyPDF/Act_card.pdf' />";
+$html = ob_get_contents();
+ob_clean();
+$pdf = new mPDF('tha2','A4','15','');
+$pdf->autoScriptToLang = true;
+$pdf->autoLangToFont = true;
+$pdf->SetDisplayMode('fullpage');
+$pdf->WriteHTML($html, 2);
+$pdf->Output("MyPDF/PortFolio.pdf");
+echo "<meta http-equiv='refresh' content='0;url=MyPDF/PortFolio.pdf' />";
 ?>
     </body>
     </html>
