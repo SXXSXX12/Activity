@@ -15,8 +15,8 @@ if(! $connect)
   {
    $handle = fopen($_FILES['file']['tmp_name'], "r");
    while($data = fgetcsv($handle))
-   {        echo $data[1];
-                $item1 = mysqli_real_escape_string($connect, $data[0]);
+   {        
+                $item1 = mysqli_real_escape_string($connect, $data[0]);               
                 $item2 = mysqli_real_escape_string($connect, $data[1]);
                 $item3 = mysqli_real_escape_string($connect, $data[2]);
                 $item4 = mysqli_real_escape_string($connect, $data[3]);
@@ -31,14 +31,14 @@ if(! $connect)
 //                $item13 = mysqli_real_escape_string($connect, $data[12]);
                 //$item12 = mysqli_real_escape_string($connect, $data[11]);
                 //$query = "INSERT into tb_test (excel_name, excel_email, tb_user) values('$item1','$item2','$item3')";
-                $query = "INSERT into student (pname, fname, lname, std_code, address, phone, dateofbirth, email) 
-                values('$item1','$item2','$item3','$item4','$item5','$item6','$item7','$item8')";
+                $query = "INSERT into student set pname='$item1', fname='$item2', lname='$item3', std_code='$item4'
+                    , address='$item5', phone='$item6', dateofbirth='$item7', email='$item8'";
                 mysqli_query ($connect, $query);
                 mysqli_set_charset($connect, "utf8");
                //mysqli_query ("SET NAMES utf-8");
    }
    fclose($handle);
-        echo "<script>alert('เพิ่มข้อมูลเรียบร้อย');</script>";
+        echo "<script>alert('import complete');</script>";
         echo "<script>window.location='data_student.php'</script>";
   }
  }

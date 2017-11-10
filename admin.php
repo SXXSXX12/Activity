@@ -36,12 +36,21 @@ $row = $result->fetch_object();
                         <h3>ข้อมูลผู้ใช้</h3>
                     </header>
                     <div id="loginbox">
-                        ชื่อ-นามสกุล : <?= $_SESSION['fullname'] ?><br />
+                        <?php $strsql1 ="SELECT CONCAT((CASE s.pname
+    WHEN 1 THEN 'นาย'
+    WHEN 2 THEN 'นางสาว'
+    ELSE 'ไม่มีสถานะ' END),s.fname,' ',s.lname) as fullname
+    FROM student s
+    WHERE s.std_code='" . $_SESSION['std_code'] . "'" ;
+                        $result1 = mysqli_query($conn, $strsql1);
+                        $rs1 = mysqli_fetch_array($result1)
+                        ?>
+                        ชื่อ-นามสกุล : <?= $rs1['fullname'] ?><br />
                         รหัสนักศึกษา : <?= $_SESSION['std_code'] ?>  <br />
                         สถานะ : <?= $row->Status_user ?>  <br />
                         อีเมล์ : <?= $row->email ?>  <br />
                         เบอร์โทร : <?= $row->phone ?>  <br /><br>
-                        <a href='edit_self.php?std_code=<?= $_SESSION['std_code'] ?>&Status_user=<?= $_SESSION['Status_user'] ?>&method=edit' title="แก้ไข" class='button'>Edit</a>
+                        <a href='edit_self_admin.php?std_code=<?= $_SESSION['std_code'] ?>&Status_user=<?= $_SESSION['Status_user'] ?>&method=edit' title="แก้ไข" class='button'>Edit</a>
                     </div>
                 </div>
 

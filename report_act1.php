@@ -123,6 +123,7 @@ GROUP BY act_id";
                 $rs2 = mysqli_fetch_array($result4);   
                 echo "มีนักศึกษาเข้าร่วมกิจกรรมจำนวน " . $num_row . " คน คิดเป็น " . round(($num_row * 100) / $rs['act_number'], 3) . "%";
                 ?>
+                <br>
                 <table width='100%' align='center' id="example3">
                     <tr>
                         <td align='center'>ลำดับ</td>

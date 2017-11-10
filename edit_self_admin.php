@@ -20,7 +20,7 @@ WHERE s.std_code = $std_code AND u.Status_user =$status_user";
 					<div class="row">
 					<div class="12u">
 						
-                                            <form action="editself.php" method="post" enctype="multipart/form-data">
+                                            <form action="editself_admin.php" method="post" enctype="multipart/form-data">
                                                         <div class="alert alert-info">
 							<div id="loginbox">
                                                             <h4>คำนำหน้า
