@@ -21,7 +21,7 @@
                 <form name="form1" method="POST" action="confirmact.php">
                           โค้ดกิจกรรม  <input type="text" name="gencode" value=""  /><br/>    
                           <input type="hidden" name="act_id" value="<?=$act_id?>">     
-                          <input type="submit" onclick="return confirm('ยืนยันการเข้ากิจกรรมเรียบร้อยแล้วค่ะ')" value="ยืนยัน"/>
+                          <input type="submit" value="ยืนยัน"/>
                     <input type="submit" class="button special" value=" ยกเลิก " />
                    </form>
                  </div>

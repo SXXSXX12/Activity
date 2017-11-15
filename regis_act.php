@@ -12,8 +12,21 @@ $act_id = $_POST['act_id'];
 $std_code = $_POST['std_code'];
 $chk = mysqli_query($conn, "select std_code from history_act where std_code='$std_code' and act_id=$act_id");
 $chk = mysqli_num_rows($chk);
-if($chk==0){
-$sql=mysqli_query($conn,"insert into history_act SET act_id='$act_id',
+
+$date = mysqli_query($conn, "select act_datestart from activity where act_id=$act_id"); 
+$date = mysqli_fetch_array($date);
+$chk2 = mysqli_query($conn, "SELECT *
+FROM history_act h
+INNER JOIN activity a ON a.act_id= h.act_id
+WHERE h.std_code ='$std_code'
+and ('".$date['act_datestart']."' between a.act_datestart and a.act_dateend)");
+$chk2 = mysqli_num_rows($chk2);
+if($chk!=0 or $chk2!=0){
+        echo "<script>alert('มีการลงทะเบียนแล้วค่ะ !!');</script>";
+	echo "<META HTTP-EQUIV='Refresh' CONTENT='2;URL=regis_table.php'>";
+	exit();
+        } else {
+        $sql=mysqli_query($conn,"insert into history_act SET act_id='$act_id',
 	std_code ='$std_code',status_regis=1");
 if(!$sql){
 		echo "Update not complate ERROR : ".mysqli_error($conn)."";
@@ -22,10 +35,6 @@ if(!$sql){
             echo "<META HTTP-EQUIV='Refresh' CONTENT='2;URL=regis_table.php'>";
 		//header("location:regis_table.php"); 
 	}
-        } else {
-        echo "<script>alert('มีการลงทะเบียนแล้วค่ะ !!');</script>";
-	echo "<META HTTP-EQUIV='Refresh' CONTENT='2;URL=regis_table.php'>";
-	exit();
 }?>
 </body>
 </html>

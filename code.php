@@ -4,7 +4,6 @@ $act_id = $_GET['act_id'];
 
 $strsql = "SELECT c.*,a.act_name FROM code_activity c inner join activity a on a.act_id=c.act_id where c.act_id='$act_id' ORDER BY code_id DESC";
 $result = mysqli_query($conn, $strsql);
-$rs = mysqli_fetch_assoc($result);
 require_once ('mpdf60/mpdf.php');//ที่อยู่ของไฟล์ mpdf.phpในเครื่องเรา
              ob_start();
 ?>

@@ -6,6 +6,10 @@ $act_id = $_POST['act_id'];
 $gencode = trim($_POST['gencode']);
 $_SESSION['std_code']; 
 
+$chkgenc = strlen($gencode)-5;
+$chkgenc = substr($gencode,0,$chkgenc);
+
+if($act_id == $chkgenc){
 $sql = mysqli_query($conn, "select code_id,gencode,gen_date from code_activity where gencode='$gencode'");
 $chkcode = mysqli_fetch_array($sql);
 
@@ -48,10 +52,12 @@ if (count($chkcode) != 0) {
     } else {
         switch ($_SESSION['Status_user']) {
             case 1:
+                echo "<script>alert('ยืนยันการเข้ากิจกรรมเรียบร้อยแล้วค่ะ');</script>";
                 echo" <META HTTP-EQUIV='Refresh' CONTENT='2;URL=admin.php?his_id=".$his_id['his_id']."'>";
                 //header("location:admin.php?his_id=".$his_id['his_id']."");
                 break;
             case 3:
+                echo "<script>alert('ยืนยันการเข้ากิจกรรมเรียบร้อยแล้วค่ะ');</script>";
                 header("location:student.php?his_id=".$his_id['his_id']."");
                 break;
             default:
@@ -60,4 +66,8 @@ if (count($chkcode) != 0) {
     }
 } else {
     echo 'โค้ดกิจกรรมไม่ตรง';
+}
+}else{
+    echo "<script>alert('คนละกิจกรรมโว้ย!!!');</script>";
+    echo" <META HTTP-EQUIV='Refresh' CONTENT='2;URL=confirm_act.php?act_id=$act_id'>";
 }
