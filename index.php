@@ -46,33 +46,40 @@
                         <h5></h5>
                     </header>
                 </section>
-
                 <section class="box special features">
-                    <div class="features-row">
-                        <section>
-                            <img src="images/nam.jpg" width="250" height="170">
-                            <h4>กิจกรรมรับน้อง</h4>
-                            <p>กิจกรรมรับน้องสาขา  สานสัมพันธ์จากรุ่นพี่สู่รุ่นน้อง กิจกรรมประจำปีของสาขาวิชาวิทยาการคอมพิวเตอร์ </p>
-                        </section>
-                        <section>
-                            <img src="images/nun.jpg" width="250" height="170">
-                            <h4>กิจกรรมทำบุญตักบาตร</h4>
-                            <p>กิจกรรมทำบุญตักบาตรสาขา  เพื่อฝึกให้นักศึกษาทุกคนมีความเมตตา เผื่อแผ่ แบ่งปัน ช่วยเหลือผู้อื่น และรักศาสนา</p>
-                        </section>
-                    </div>
-                    <div class="features-row">
-                        <section>
-                            <img src="images/che.jpg" width="250" height="170">
-                            <h4>กิจกรรมไหว้ครู</h4>
-                            <p>กิจกรรมไหว้ครูสาขา ครูผู้ให้ความรู็ คำแนะนำที่ดีแก่นักศึกษาทุกคน กิจกรรมประจำปีของสาขาวิชาวิทยาการคอมพิวเตอร์ </p>
-                        </section>
-                        <section>
-                            <img src="images/ka.jpg" width="250" height="170">
-                            <h4>กิจกรรมค่ายอาสา</h4>
-                            <p>กิจกรรมค่ายอาสา ฝึกวินัย การแบ่งปันสิ่งของให้กับคนที่ขาดแคลน เป็นสิ่งหนึ่งที่เพื่อนมนุษย์มีคือน้ำใจ</p>
-                        </section>
-                   </div>
-             </section>
+                    <?php
+                    include_once 'config/config.php';
+                $strsql0 = "SELECT rela_id FROM relations_act order by rela_id desc limit 4";
+                $result = mysqli_query($conn, $strsql0);
+                    while ($rs1 = mysqli_fetch_array($result)) {
+                        $his_id[] = $rs1['rela_id'];
+                    }
+                    $count = ceil(count($his_id) / 2);
+                    $I = 0;
+                    for ($i = 1; $i <= $count; $i++) {
+                        ?>
+                        <div class="features-row">
+                            <?php
+                            for ($ii = 0; $ii <= 1; $ii++) {
+                                $strsql = "SELECT topic,descrip,image,des_act FROM relations_act where rela_id=$his_id[$I]";
+                                $result1 = mysqli_query($conn, $strsql);
+                                $rs = mysqli_fetch_array($result1)
+                                ?>
+                                <section>
+                                    <img src="photo/<?= $rs['image'] ?>" width="250">
+                                    <h4><?= $rs['topic'] ?></h4>
+                                    <p><?= $rs['descrip'] . ' ' . $rs['des_act'] ?> </p>
+                                </section>
+                                <?php
+                                if ($I == (count($his_id) - 1)) {
+                                    break;
+                                }
+                                $I++;
+                            }
+                            ?>
+                        </div>
+                    <?php } ?>
+                </section>
         </div>
     </div>
 </section>

@@ -18,7 +18,7 @@ function removespecialchars($raw) {
 }
 
 if (!empty($_FILES["image"]["name"])) {
-    if (move_uploaded_file($_FILES["image"]["tmp_name"], "post/" . removespecialchars(date("d-m-Y/") . "1" . $_FILES["image"]["name"]))) {
+    if (move_uploaded_file($_FILES["image"]["tmp_name"], "photo/" . removespecialchars(date("d-m-Y/") . "1" . $_FILES["image"]["name"]))) {
         $file1 = date("d-m-Y/") . "1" . $_FILES["image"]["name"];
         $image = removespecialchars($file1);
     }

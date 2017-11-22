@@ -10,6 +10,10 @@
 include_once 'config/config.php';
 $act_id = $_POST['act_id'];
 $std_code = $_POST['std_code'];
+
+$chk0 = mysqli_query($conn, "select std_code from user where std_code='$std_code'");
+$chk0 = mysqli_num_rows($chk0);
+if($chk0!=0){
 $chk = mysqli_query($conn, "select std_code from history_act where std_code='$std_code' and act_id=$act_id");
 $chk = mysqli_num_rows($chk);
 
@@ -35,7 +39,12 @@ if(!$sql){
             echo "<META HTTP-EQUIV='Refresh' CONTENT='2;URL=regis_table.php'>";
 		//header("location:regis_table.php"); 
 	}
-}?>
+}
+}else{
+    echo "<script>alert('ไม่ใช่นักศึกษาในระบบค่ะ');</script>";
+            echo "<META HTTP-EQUIV='Refresh' CONTENT='2;URL=regis_table.php'>";
+}
+?>
 </body>
 </html>
 
