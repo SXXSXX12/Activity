@@ -68,6 +68,6 @@ if (count($chkcode) != 0) {
     echo 'โค้ดกิจกรรมไม่ตรง';
 }
 }else{
-    echo "<script>alert('คนละกิจกรรมโว้ย!!!');</script>";
+    echo "<script>alert('รหัสกิจกรรมไม่ตรงกันค่ะ');</script>";
     echo" <META HTTP-EQUIV='Refresh' CONTENT='2;URL=confirm_act.php?act_id=$act_id'>";
 }
